@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4472379442586197872}
   - component: {fileID: 8133860651146437323}
   - component: {fileID: 2771131908088890941}
+  - component: {fileID: 4592372570732104115}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -64,6 +65,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,9 +88,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &4472379442586197872
 SphereCollider:
@@ -124,6 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 5
   currSpeed: 0
+  bobAmplitude: 0.2
+  bobSpeed: 6
 --- !u!114 &2771131908088890941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +149,20 @@ MonoBehaviour:
   speedChanged: 0
   shieldCountdown: 2
   speedCountdown: 2
+--- !u!114 &4592372570732104115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162583734936910369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2d97538068cc74a8303a550a8739bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
+  fruitPrefabs:
+  - {fileID: 2730144422520446018, guid: 8570fad5190288845b862b87452537c7, type: 3}
+  - {fileID: 27149061791387939, guid: 9ec3e289fa8b1f647a652989fe5e073c, type: 3}
+  - {fileID: 6072601312269206988, guid: 47b86d2c8ebc32041ad699dccffd3a80, type: 3}
+  - {fileID: 1669252309775151877, guid: fbe99ac3d4f284746a1cdd698b4c925d, type: 3}

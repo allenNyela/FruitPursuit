@@ -5,8 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sandbox.unity
     guid: c843ca4c815e68048851ecd1c53d8845
+  - enabled: 1
+    path: Assets/Scenes/Scarlet-Sandbox.unity
+    guid: 6276ba474bc86ce41aa514f896f7502e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
