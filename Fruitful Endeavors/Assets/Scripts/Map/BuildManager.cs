@@ -3,7 +3,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Turret[] towers;
+    [SerializeField] private Tower[] towers;
 
     private int selectedTower = 0;
 
@@ -30,7 +30,7 @@ public class BuildManager : MonoBehaviour
         this.selectedTower = selectedTower;
     }
 
-    public Turret GetSelectedTower()
+    public Tower GetSelectedTower()
     {
         return towers[selectedTower];
     }

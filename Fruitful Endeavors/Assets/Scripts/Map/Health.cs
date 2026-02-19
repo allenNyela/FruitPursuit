@@ -5,12 +5,12 @@ public class Health : MonoBehaviour
 {
     [Header("Attritbute")]
     [SerializeField] private int health = 12;
-    [SerializeField] private int currencyWorth = 50;
+    [SerializeField] private int currencyWorth = 10;
     [SerializeField] public bool shielded = false;
     [SerializeField] public bool speedChanged = false;
     [SerializeField] public float shieldCountdown = 2f;
     [SerializeField] public float speedCountdown = 2f;
-    //[SerializeField] public int damage = 10;
+    [SerializeField] public int damage = 10;
 
     private bool isDestroyed = false;
 
@@ -46,8 +46,8 @@ public class Health : MonoBehaviour
         {
 
            // GetComponent<SoundEffectPlayer>().PlayNow();
-            //EnemySpawner.onEnemyDestroy.Invoke();
-            //LevelManager.main.IncreaseCurrency(currencyWorth);
+            WaveSpawner.onEnemyDestroy.Invoke();
+            LevelManager.main.IncreaseCurrency(currencyWorth);
             isDestroyed = true;
             Destroy(gameObject);
         }

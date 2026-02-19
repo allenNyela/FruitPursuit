@@ -39,7 +39,8 @@ public class Enemy : MonoBehaviour
     void GetNextWayPoint()
     {
         if (waypointIndex >= Waypoint.points.Length - 1) 
-        { 
+        {
+            WaveSpawner.onEnemyDestroy.Invoke();
             Destroy(gameObject);
             return;
         }

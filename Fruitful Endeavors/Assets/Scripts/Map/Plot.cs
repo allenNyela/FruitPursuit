@@ -34,19 +34,19 @@ public class Plot : MonoBehaviour
 
     private void OnMouseDown()
     {
-       // if (tower != null) return;
+       if (tower != null) return;
 
 
-        Turret tempTower = BuildManager.main.GetSelectedTower();
+        Tower tempTower = BuildManager.main.GetSelectedTower();
 
-        // if (tempTower.cost > LevelManager.main.currency)
-        ////{
-        //return;
-        // }
+        if (tempTower.cost > LevelManager.main.currency)
+        { 
+            return;
+        }
 
-        //LevelManager.main.SpendCurrency(tempTower.cost);
+        LevelManager.main.SpendCurrency(tempTower.cost);
         Vector3 spawnLocation = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
 
-        tower = (GameObject)Instantiate(tempTower.turretPrefab, spawnLocation, Quaternion.identity);
+        tower = Instantiate(tempTower.prefab, spawnLocation, Quaternion.identity);
     }
 }
