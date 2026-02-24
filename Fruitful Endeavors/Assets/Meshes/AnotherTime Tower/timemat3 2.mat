@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: timemat3 1
+  m_Name: timemat3 2
   m_Shader: {fileID: 4800000, guid: d12428961551799408aa97256fd770c3, type: 3}
   m_Parent: {fileID: 2100000, guid: d1a6f98ea4b2315499711e61183207f4, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -30,7 +30,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _GlossIntensity: 0.603
+    - _GlossIntensity: 0
     - _GlossSoftness: 1
     - _Glossiness: 0.268
     - _Oper: 0
