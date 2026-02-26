@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5357265800869291521, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
+      propertyPath: attackDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357265800869291521, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
+      propertyPath: intervalDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: m_Name
       value: Tower_Ghosting
@@ -537,7 +545,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
