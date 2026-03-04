@@ -18,7 +18,8 @@ public class PhoneController : MonoBehaviour
     [Header("Bullet")]
     public GameObject bulletPrefab;
     public Vector3 bulletSpawnOffset = new Vector3(0f, 5f, 5f);
-    public float bulletLifetime = 3f;
+    public float   bulletLifetime  = 3f;
+    public Vector3 bulletSpawnRot  = Vector3.zero;
 
     [HorizontalLine(2f, 0.5f, 0.5f, 0.5f)]
 
@@ -91,7 +92,7 @@ public class PhoneController : MonoBehaviour
         if (bulletPrefab == null) return;
 
         Vector3 spawnPos = transform.TransformPoint(bulletSpawnOffset);
-        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.Euler(bulletSpawnRot));
         Destroy(bullet, bulletLifetime);
     }
 

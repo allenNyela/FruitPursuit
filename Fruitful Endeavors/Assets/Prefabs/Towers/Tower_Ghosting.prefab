@@ -392,9 +392,10 @@ MonoBehaviour:
   body: {fileID: 1815830909115897590}
   attackDuration: 0.1
   intervalDuration: 0.4
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 144146740865764496, guid: 052713771c0937546ad5e45646ee25bd, type: 3}
   bulletSpawnOffset: {x: 0, y: 5, z: 2}
   bulletLifetime: 1
+  bulletSpawnRot: {x: -20, y: 180, z: 0}
   close_portion: 0.8
   open_portion: 0.1
   snapback_portion: 0.1

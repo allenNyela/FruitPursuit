@@ -122,7 +122,10 @@ public class Anim_Clock : MonoBehaviour
 
         Vector3 spawnPos = transform.TransformPoint(bulletSpawnOffset);
         GameObject bullet = Instantiate(bullet_Prefab, spawnPos, Quaternion.identity);
+        Bullet b = bullet.GetComponent<Bullet>();
+        Debug.Log($"Spawned clock Bullet | lifetime={bulletLifetime} | Bullet.enabled={( b != null ? b.enabled.ToString() : "no Bullet comp")}");
         Destroy(bullet, bulletLifetime);
+
     }
 
     IEnumerator SignalLoop(GameObject wave, float delay)
