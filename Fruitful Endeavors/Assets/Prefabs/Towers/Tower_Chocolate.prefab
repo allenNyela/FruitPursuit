@@ -61,8 +61,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,11 +83,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6071434967565688820
 GameObject:
@@ -152,8 +148,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -175,11 +169,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6402108732035125909
 GameObject:
@@ -208,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 6402108732035125909}
   serializedVersion: 2
   m_LocalRotation: {x: 0.069585994, y: -0, z: -0, w: 0.99757594}
-  m_LocalPosition: {x: -0.0022197, y: 2.7306, z: -0.056852}
+  m_LocalPosition: {x: -0.002219677, y: 2.7306006, z: -0.056852102}
   m_LocalScale: {x: 0.88804, y: 0.88804, z: 0.88804}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,8 +234,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -267,12 +257,41 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6825314303291562873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092253028889287360}
+  m_Layer: 0
+  m_Name: Firing_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092253028889287360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825314303291562873}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.8, z: 1.04}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6183618076281382804}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7003331462794786690
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6183618076281382804}
   - component: {fileID: 2890779422149620023}
+  - component: {fileID: 180026585996534397}
   m_Layer: 0
   m_Name: Tower_Chocolate
   m_TagString: Untagged
@@ -304,8 +324,9 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4503948335200376523}
-  - {fileID: 1496342800700267982}
+  - {fileID: 1092253028889287360}
   - {fileID: 964111907562890616}
+  - {fileID: 1496342800700267982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2890779422149620023
@@ -315,7 +336,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7003331462794786690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a45b460a158fc2429a4c4353f90548c, type: 3}
   m_Name: 
@@ -342,3 +363,24 @@ MonoBehaviour:
   attackBox: {fileID: 6402108732035125909}
   attackScalePeak: 1.4
   attackShakeAmp: 15
+--- !u!114 &180026585996534397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003331462794786690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd06ee376ecbfa479910ff787ddaaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  range: 3
+  fireRate: 0.4
+  turnSpeed: 10
+  partToRotate: {fileID: 964111907562890616}
+  turretPrefab: {fileID: 7003331462794786690}
+  bulletPrefab: {fileID: 4783021296434833685, guid: 7db3a33342a1275499593a392923c7e0, type: 3}
+  firePoint: {fileID: 1092253028889287360}
+  enemyTag: Enemy

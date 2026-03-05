@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.GraphicsBuffer;
 
 public class PeachHeart : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class PeachHeart : MonoBehaviour
     [SerializeField] private int health = 100;
     //[SerializeField] private SpriteRenderer sr;
     [SerializeField] GameObject gameOverscreen;
+    [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject UI;
 
     private Color startColor;
 
@@ -24,13 +27,19 @@ public class PeachHeart : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        health -= collision.gameObject.GetComponent<Health>().damage;
-       // sr.color = Color.gray;
-       // GetComponent<SoundEffectPlayer>().PlaySoundEffect();
-        StartCoroutine(showCastleDamage());
+        if (!(collision.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 3)) {
+            health -= collision.gameObject.GetComponent<Health>().damage;
+            // sr.color = Color.gray;
+            // GetComponent<SoundEffectPlayer>().PlaySoundEffect();
+            StartCoroutine(showCastleDamage());
 
-        Anim_Peach anim = GetComponentInChildren<Anim_Peach>();
-        if (anim != null) anim.PlayHitAnim();
+            Anim_Peach anim = GetComponentInChildren<Anim_Peach>();
+            if (anim != null) anim.PlayHitAnim();
+        } else
+        {
+            health += collision.gameObject.GetComponent<Health>().damage;
+        }
+        
     }
 
 
@@ -46,6 +55,11 @@ public class PeachHeart : MonoBehaviour
         if (health <= 0)
         {
             gameOverscreen.SetActive(true);
+            UI.SetActive(false);
+        } else if (health >= 150)
+        {
+            winScreen.SetActive(true);
+            UI.SetActive(false);
         }
 
     }

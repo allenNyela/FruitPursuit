@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using static Bullet;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour
     private float baseY;
     private Animator animator;
     private bool hasSpeedParam;
+
+    [SerializeField] public EnemyType type;
 
     private void Start()
     {
@@ -73,5 +76,11 @@ public class Enemy : MonoBehaviour
         }
         waypointIndex++;
         target = Waypoint.points[waypointIndex];
+    }
+
+    public enum EnemyType
+    {
+        Unwanted,
+        Wanted
     }
 }

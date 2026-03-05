@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
+
+    [SerializeField] GameObject Settings;
+    [SerializeField] GameObject UI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,5 +26,11 @@ public class Retry : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void CloseSettings()
+    {
+        Settings.SetActive(false);
+        UI.SetActive(true);
     }
 }

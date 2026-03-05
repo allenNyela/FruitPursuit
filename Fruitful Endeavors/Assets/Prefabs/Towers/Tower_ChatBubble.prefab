@@ -197,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8359516918488444716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 590bfc8f5e2166d4aad1ac5e82196764, type: 3}
   m_Name: 
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 1.49
-  fireRate: 8
+  range: 3
+  fireRate: 1
   turnSpeed: 10
   partToRotate: {fileID: 2202093695739318068}
   turretPrefab: {fileID: 8359516918488444716}

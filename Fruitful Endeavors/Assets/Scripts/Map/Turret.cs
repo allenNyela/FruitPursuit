@@ -46,8 +46,14 @@ public class Turret : MonoBehaviour
 
         if (fireCountdown <= 0f)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            if ((!(target.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 3)) && (bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield || bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Healing))
+            {
+                return;
+            } else
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }                    
         }
 
         fireCountdown -= Time.deltaTime;

@@ -7,6 +7,7 @@ public class EnemyFruitMesh : MonoBehaviour
     public GameObject[] fruitPrefabs;
     [Tooltip("Vertical offset to place fruit on the ground")]
     public float yOffset = 0f;
+    public int chosenPrefab;
 
     private void Awake()
     {
@@ -18,8 +19,8 @@ public class EnemyFruitMesh : MonoBehaviour
 
         MeshRenderer mr = GetComponent<MeshRenderer>();
         if (mr != null) mr.enabled = false;
-
-        GameObject chosen = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+        chosenPrefab = Random.Range(0, fruitPrefabs.Length);
+        GameObject chosen = fruitPrefabs[chosenPrefab];
         bool hasAnim = chosen.GetComponent<Animator>() != null || chosen.GetComponentInChildren<Animator>() != null;
         Quaternion rot = hasAnim ? Quaternion.identity : Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         Vector3 spawnPos = transform.position + new Vector3(0f, yOffset, 0f);

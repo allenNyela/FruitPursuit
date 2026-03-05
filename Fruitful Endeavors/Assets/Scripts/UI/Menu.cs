@@ -5,6 +5,8 @@ public class Menu : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] TextMeshProUGUI currencyUI;
+    [SerializeField] GameObject settings;
+    [SerializeField] GameObject UI;
 
     private bool isMenuOpen = false;
 
@@ -43,5 +45,11 @@ public class Menu : MonoBehaviour
             isMenuOpen = true;
         }
 
+    }
+
+    public void OpenSettings()
+    {
+        settings.SetActive(true);
+        UI.SetActive(false);
     }
 }
