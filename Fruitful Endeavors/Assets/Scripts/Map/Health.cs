@@ -5,6 +5,8 @@ public class Health : MonoBehaviour
 {
     [Header("Attritbute")]
     [SerializeField] private int health = 12;
+    [HideInInspector] public int maxHealth;
+    public int CurrentHealth => health;
     [SerializeField] private int currencyWorth = 10;
     [SerializeField] public bool shielded = false;
     [SerializeField] public bool speedChanged = false;
@@ -13,6 +15,11 @@ public class Health : MonoBehaviour
     [SerializeField] public int damage = 10;
 
     private bool isDestroyed = false;
+
+    private void Awake()
+    {
+        maxHealth = health;
+    }
 
     void Update()
     {
@@ -40,6 +47,7 @@ public class Health : MonoBehaviour
         if (!shielded)
         {
             health -= dmg;
+            Debug.Log(health);
         }     
 
         if (health <= 0 && !isDestroyed)
