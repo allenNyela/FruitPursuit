@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6728861097112510306
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.583729
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24999988
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.503538
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7759017
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.63085395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 78.226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      propertyPath: m_Name
+      value: Banana_walk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7090868318190515608}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9119613801523173811}
+  m_SourcePrefab: {fileID: 100100000, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+--- !u!1 &5881945572823999027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c9f8321af2ad8148aa6d100d1170a30, type: 3}
+  m_PrefabInstance: {fileID: 6728861097112510306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7090868318190515608
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881945572823999027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c875b37808b293943bb3a5d228e3bc81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9119613801523173811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881945572823999027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47393cb057e884459256664df63e45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitHeight
+  height: 2

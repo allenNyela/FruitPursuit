@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
         if (!shielded)
         {
             health -= dmg;
-            Debug.Log(health);
+            //Debug.Log(health);
         }     
 
         if (health <= 0 && !isDestroyed)

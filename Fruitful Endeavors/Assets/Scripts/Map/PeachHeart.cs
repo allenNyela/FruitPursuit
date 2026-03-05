@@ -28,6 +28,9 @@ public class PeachHeart : MonoBehaviour
        // sr.color = Color.gray;
        // GetComponent<SoundEffectPlayer>().PlaySoundEffect();
         StartCoroutine(showCastleDamage());
+
+        Anim_Peach anim = GetComponentInChildren<Anim_Peach>();
+        if (anim != null) anim.PlayHitAnim();
     }
 
 

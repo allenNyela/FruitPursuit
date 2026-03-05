@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.8, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5616919200669351861
@@ -194,7 +194,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.49369, y: 0.5, z: 14.08095}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4815881598074257607}
   m_Father: {fileID: 0}
@@ -293,6 +293,8 @@ MonoBehaviour:
   currSpeed: 0
   bobAmplitude: 0.2
   bobSpeed: 6
+  animSpeedAmp: 0.2
+  anim_speed_standard: 2
 --- !u!114 &2771131908088890941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,10 +328,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
   fruitPrefabs:
-  - {fileID: 2730144422520446018, guid: 8570fad5190288845b862b87452537c7, type: 3}
-  - {fileID: 27149061791387939, guid: 9ec3e289fa8b1f647a652989fe5e073c, type: 3}
   - {fileID: 6072601312269206988, guid: 47b86d2c8ebc32041ad699dccffd3a80, type: 3}
-  - {fileID: 1669252309775151877, guid: fbe99ac3d4f284746a1cdd698b4c925d, type: 3}
+  - {fileID: 27149061791387939, guid: 9ec3e289fa8b1f647a652989fe5e073c, type: 3}
+  - {fileID: 2730144422520446018, guid: 8570fad5190288845b862b87452537c7, type: 3}
+  - {fileID: 5881945572823999027, guid: 34573e89629b0bf43a428201ec16f7ca, type: 3}
+  yOffset: 0
 --- !u!114 &2994114874623317469
 MonoBehaviour:
   m_ObjectHideFlags: 0

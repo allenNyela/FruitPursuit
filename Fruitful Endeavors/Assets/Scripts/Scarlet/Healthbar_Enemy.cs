@@ -12,6 +12,21 @@ public class Healthbar_Enemy : MonoBehaviour
     {
         health = GetComponentInParent<Health>();
         canvasWidth = healthCanvas.rect.width;
+
+        EnemyFruitHeight fruitHeight = health.GetComponentInChildren<EnemyFruitHeight>();
+        
+        Debug.Log(fruitHeight);
+        if (fruitHeight != null)
+        {
+            Vector3 pos = healthCanvas.localPosition;
+            pos.y = fruitHeight.height;
+            healthCanvas.localPosition = pos;
+            Debug.Log($"HealthBar Y set to {fruitHeight.height}");
+        }
+        else
+        {
+            Debug.LogWarning("EnemyFruitHeight not found on fruit prefab!", this);
+        }
     }
 
     private void Update()

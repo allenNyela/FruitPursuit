@@ -75,5 +75,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d5f18479ff034d44b95187533561e7c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3327019318241633035}
   m_SourcePrefab: {fileID: 100100000, guid: d5f18479ff034d44b95187533561e7c6, type: 3}
+--- !u!1 &27149061791387939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5f18479ff034d44b95187533561e7c6, type: 3}
+  m_PrefabInstance: {fileID: 910037446518025330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3327019318241633035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27149061791387939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47393cb057e884459256664df63e45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitHeight
+  height: 1.2
