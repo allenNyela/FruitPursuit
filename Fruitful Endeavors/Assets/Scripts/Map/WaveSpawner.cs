@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class WaveSpawner : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    private bool startCountdown = false;
+    public TMP_Text countdownText;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -57,6 +60,12 @@ public class WaveSpawner : MonoBehaviour
         {
             EndWave();
         }
+
+        //if(startCountdown)
+        //{
+        //    countdownText.text = $"{timeBetweenWaves.ToString("f0")}";
+        //    if ()
+        //}
     }
 
     private IEnumerator StartWave()

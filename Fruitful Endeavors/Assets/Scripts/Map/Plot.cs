@@ -8,6 +8,7 @@ public class Plot : MonoBehaviour
 
     private GameObject tower;
     private Color startColor;
+    public bool turretFilled;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,29 +25,34 @@ public class Plot : MonoBehaviour
     private void OnMouseEnter()
     {
         Debug.Log("Mouse hover!");
-        //sr.color = hoverColor;
+        if (!turretFilled)
+        {
+            LevelManager.main.showPreview(this);
+        }
+        
     }
 
     private void OnMouseExit()
     {
-        //sr.color = startColor;
+        LevelManager.main.hidePreview(this);
     }
 
     private void OnMouseDown()
     {
        if (tower != null) return;
 
-
+        
         Tower tempTower = BuildManager.main.GetSelectedTower();
 
         if (tempTower.cost > LevelManager.main.currency)
         { 
             return;
         }
-
+        LevelManager.main.hidePreview(this);
         LevelManager.main.SpendCurrency(tempTower.cost);
         Vector3 spawnLocation = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
 
         tower = Instantiate(tempTower.prefab, spawnLocation, Quaternion.identity);
+        turretFilled = true;
     }
 }
