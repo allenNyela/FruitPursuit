@@ -64,6 +64,10 @@ public class Health : MonoBehaviour
     public void GiveHealth(int amt)
     {
         health += amt;
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
 
         if (health <= 0 && !isDestroyed)
         {
