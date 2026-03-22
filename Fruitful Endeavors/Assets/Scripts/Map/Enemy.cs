@@ -42,9 +42,12 @@ public class Enemy : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * currSpeed * Time.deltaTime, Space.World);
-        Vector3 flatDir = new Vector3(dir.x, 0f, dir.z);
-        if (flatDir != Vector3.zero)
-            transform.forward = flatDir.normalized;
+        if (animator != null)
+        {
+            Vector3 flatDir = new Vector3(dir.x, 0f, dir.z);
+            if (flatDir != Vector3.zero)
+                transform.forward = flatDir.normalized;
+        }
 
         if (animator != null && hasSpeedParam)
         {
@@ -52,7 +55,6 @@ public class Enemy : MonoBehaviour
             animator.SetFloat("speed_multiplier", speedMult);
         }
 
-        // Apply gentle vertical bob on top of path movement
         if (animator == null)
         {
             Vector3 pos = transform.position;

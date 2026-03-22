@@ -294,7 +294,8 @@ MonoBehaviour:
   bobAmplitude: 0.2
   bobSpeed: 6
   animSpeedAmp: 0.2
-  anim_speed_standard: 2
+  anim_speed_standard: 2.5
+  type: 0
 --- !u!114 &2771131908088890941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,11 +329,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
   fruitPrefabs:
+  - {fileID: 7159503177062831574, guid: dc2695d625f99e243b2ab1947a9e4535, type: 3}
+  - {fileID: 1710433020049593376, guid: 700df31bcb52bc54a800a7273e0943d9, type: 3}
   - {fileID: 6072601312269206988, guid: 47b86d2c8ebc32041ad699dccffd3a80, type: 3}
-  - {fileID: 27149061791387939, guid: 9ec3e289fa8b1f647a652989fe5e073c, type: 3}
-  - {fileID: 2730144422520446018, guid: 8570fad5190288845b862b87452537c7, type: 3}
   - {fileID: 5881945572823999027, guid: 34573e89629b0bf43a428201ec16f7ca, type: 3}
+  - {fileID: 3415495452731829104, guid: e8ca4c0c76bf7944eb867f4c0688bbab, type: 3}
+  - {fileID: 1254231048497536774, guid: 55f42b8e392231b45b57717a2d3d582c, type: 3}
   yOffset: 0
+  chosenPrefab: 0
 --- !u!114 &2994114874623317469
 MonoBehaviour:
   m_ObjectHideFlags: 0
