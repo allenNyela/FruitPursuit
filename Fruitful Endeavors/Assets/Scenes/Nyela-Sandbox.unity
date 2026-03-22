@@ -1043,6 +1043,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyUI: {fileID: 1316545412}
+  settings: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!114 &182574948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,7 +1169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &205489004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1271,6 +1273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   gameOverscreen: {fileID: 766186478}
+  winScreen: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!54 &205489009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1431,6 +1435,10 @@ PrefabInstance:
     - target: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: m_Name
       value: Tower_Ghosting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3112,6 +3120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_AnotherTime
       objectReference: {fileID: 0}
+    - target: {fileID: 1612157446659292786, guid: 1c4159de885fedf47803e8569a14ed76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2095396532522116296, guid: 1c4159de885fedf47803e8569a14ed76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.83
@@ -3444,6 +3456,10 @@ PrefabInstance:
     - target: {fileID: 8359516918488444716, guid: 508fada2eecad5041bb9fcc2d4be335b, type: 3}
       propertyPath: m_Name
       value: Tower_ChatBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359516918488444716, guid: 508fada2eecad5041bb9fcc2d4be335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9171907146146608534, guid: 508fada2eecad5041bb9fcc2d4be335b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5651,6 +5667,7 @@ MonoBehaviour:
   enemiesPerSecond: 0.5
   timeBetweenWaves: 5
   difficultyScalingFactor: 0.5
+  countdownText: {fileID: 0}
 --- !u!4 &1579222763
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,6 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   startpoint: {fileID: 0}
+  towers: []
   currency: 15
 --- !u!1001 &1637517270
 PrefabInstance:
@@ -6104,7 +6122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1767124854
 BoxCollider:
   m_ObjectHideFlags: 0
