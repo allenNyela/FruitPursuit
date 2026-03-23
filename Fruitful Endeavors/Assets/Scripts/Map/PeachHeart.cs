@@ -5,7 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 public class PeachHeart : MonoBehaviour
 {
     [Header("Attributes")]
-    [SerializeField] private int health = 100;
+    [SerializeField] public int health = 100;
+    public int dieHealth = 0;
+    public int winHealth = 150;
     //[SerializeField] private SpriteRenderer sr;
     [SerializeField] GameObject gameOverscreen;
     [SerializeField] GameObject winScreen;
@@ -52,11 +54,11 @@ public class PeachHeart : MonoBehaviour
 
     public void TriggerGameOverScreen()
     {
-        if (health <= 0)
+        if (health <= dieHealth)
         {
             gameOverscreen.SetActive(true);
             UI.SetActive(false);
-        } else if (health >= 150)
+        } else if (health >= winHealth)
         {
             winScreen.SetActive(true);
             UI.SetActive(false);
