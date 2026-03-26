@@ -24,7 +24,7 @@ public class Anim_ChatBubble : MonoBehaviour
     [Header("Bullet")]
     public GameObject bulletPrefab;
     public Vector3    bulletSpawnOffset = new Vector3(0f, 4f, 8f);
-    public float      bulletLifetime    = 0.8f;
+    public float bulletLifetime;    
 
     [HorizontalLine(2f, 0.5f, 0.5f, 0.5f)]
 
@@ -63,6 +63,7 @@ public class Anim_ChatBubble : MonoBehaviour
 
     void Start()
     {
+        bulletLifetime = bulletPrefab.GetComponent<Bullet>().shieldTimer;
         turret = GetComponent<Turret>();
         if (bubble1 != null) StartCoroutine(BubbleFloatLoop(bubble1, 0f));
         if (bubble2 != null) StartCoroutine(BubbleFloatLoop(bubble2, bubblePhaseOffset));
@@ -108,7 +109,7 @@ public class Anim_ChatBubble : MonoBehaviour
         while (true)
         {
             bool hasTarget = turret != null && turret.target != null;
-            if (hasTarget)
+            if (hasTarget && turret.target.gameObject.GetComponent<Enemy>().type == Enemy.EnemyType.Wanted && !turret.target.gameObject.GetComponent<Health>().shielded)
             {
                 yield return StartCoroutine(HeadAttack());
                 yield return StartCoroutine(HeadIdleJelly());

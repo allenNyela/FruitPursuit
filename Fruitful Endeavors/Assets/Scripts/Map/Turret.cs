@@ -51,6 +51,9 @@ public class Turret : MonoBehaviour
                 return;
             } else
             {
+                if (bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield && target.GetComponent<Health>().shielded) {
+                    return;
+                }
                 Shoot();
                 fireCountdown = 1f / fireRate;
             }                    
