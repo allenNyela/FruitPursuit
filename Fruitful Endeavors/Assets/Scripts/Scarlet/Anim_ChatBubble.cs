@@ -59,8 +59,11 @@ public class Anim_ChatBubble : MonoBehaviour
 
 
 
+    private Turret turret;
+
     void Start()
     {
+        turret = GetComponent<Turret>();
         if (bubble1 != null) StartCoroutine(BubbleFloatLoop(bubble1, 0f));
         if (bubble2 != null) StartCoroutine(BubbleFloatLoop(bubble2, bubblePhaseOffset));
         StartCoroutine(AttackLoop());
@@ -104,8 +107,16 @@ public class Anim_ChatBubble : MonoBehaviour
     {
         while (true)
         {
-            yield return StartCoroutine(HeadAttack());
-            yield return StartCoroutine(HeadIdleJelly());
+            bool hasTarget = turret != null && turret.target != null;
+            if (hasTarget)
+            {
+                yield return StartCoroutine(HeadAttack());
+                yield return StartCoroutine(HeadIdleJelly());
+            }
+            else
+            {
+                yield return StartCoroutine(HeadIdleContinuous());
+            }
         }
     }
 
@@ -164,6 +175,30 @@ public class Anim_ChatBubble : MonoBehaviour
     }
 
 
+    // ── Continuous idle (no fade, loops until target appears) ────────────────
+
+    IEnumerator HeadIdleContinuous()
+    {
+        if (head == null) yield break;
+        Vector3 startScale = head.transform.localScale;
+        Vector3 startPos   = head.transform.localPosition;
+        float   elapsed    = 0f;
+
+        while (turret == null || turret.target == null)
+        {
+            elapsed += Time.deltaTime;
+            float jelly    = Mathf.Sin(elapsed * headJellyFreq * Mathf.PI * 2f) * headJellyAmp;
+            float yFactor  = 1f + jelly;
+            float xzFactor = 1f / Mathf.Sqrt(Mathf.Max(yFactor, 0.01f));
+            head.transform.localScale    = new Vector3(startScale.x * xzFactor, startScale.y * yFactor, startScale.z * xzFactor);
+            head.transform.localPosition = startPos + Vector3.up * (Mathf.Sin(elapsed * headWobbleFreq * Mathf.PI * 2f) * headWobbleAmp);
+            yield return null;
+        }
+
+        head.transform.localScale    = startScale;
+        head.transform.localPosition = startPos;
+    }
+
     // ── Idle jelly ───────────────────────────────────────────────────────────
 
     IEnumerator HeadIdleJelly()
@@ -204,8 +239,19 @@ public class Anim_ChatBubble : MonoBehaviour
     {
         if (bulletPrefab == null) return;
         GameObject bullet = Instantiate(bulletPrefab, transform.TransformPoint(bulletSpawnOffset), Quaternion.identity);
-        Destroy(bullet, bulletLifetime);
+        Bullet b = bullet.GetComponent<Bullet>();
+        if (b == null || !b.followOnHit) Destroy(bullet, bulletLifetime);
         StartCoroutine(ScaleIn(bullet, bulletScaleInDuration));
+
+        // 将子弹指向 Turret 当前目标
+        if (turret != null && turret.target != null)
+        {
+            if (b != null) b.Seek(turret.target);
+        }
+
+        // 启动倒计时条
+        Bubble_Countdown countdown = GetComponent<Bubble_Countdown>();
+        if (countdown != null) countdown.StartCountdown();
     }
 
     IEnumerator ScaleIn(GameObject obj, float duration)

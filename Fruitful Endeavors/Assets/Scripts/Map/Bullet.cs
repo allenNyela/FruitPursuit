@@ -11,6 +11,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] public float speedReducTimer = 5f;
     [SerializeField] public float newSpeed = 1f;
 
+    public bool  followOnHit    = false;
+    public float followDuration = 3f;
+    private bool isFollowing    = false;
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -26,6 +30,19 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if (target == null) { Destroy(gameObject); return; }
+
+        if (isFollowing)
+        {
+            Vector3 offset = Vector3.zero;
+            if (type == BulletType.Shield)
+            {
+                EnemyFruitHeight efh = target.GetComponentInChildren<EnemyFruitHeight>();
+                float h = efh != null ? efh.height : 1f;
+                offset = new Vector3(0f, h * 0.5f, 0f);
+            }
+            transform.position = target.position + offset;
+            return;
+        }
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
@@ -58,7 +75,15 @@ public class Bullet : MonoBehaviour
             target.gameObject.GetComponent<Health>().speedChanged = true;
             target.gameObject.GetComponent<Health>().speedCountdown = speedReducTimer;
         }
-        Destroy(gameObject);
+        if (followOnHit)
+        {
+            isFollowing = true;
+            Destroy(gameObject, followDuration);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     
     public enum BulletType
