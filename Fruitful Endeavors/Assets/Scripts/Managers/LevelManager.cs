@@ -68,6 +68,10 @@ public class LevelManager : MonoBehaviour
                 towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[3].SetActive(true);
                 break;
+            case "Punch":
+                towers[4].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[4].SetActive(true);
+                break;
         }
     }
 
@@ -90,6 +94,10 @@ public class LevelManager : MonoBehaviour
             case "Gift":
                 //towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[3].SetActive(false);
+                break;
+            case "Punch":
+                //towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[4].SetActive(false);
                 break;
         }
     }

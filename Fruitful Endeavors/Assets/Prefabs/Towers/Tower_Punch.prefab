@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       propertyPath: m_Name
-      value: 532_punch
+      value: Tower_Punch
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       propertyPath: m_IsActive
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05ff3f80e1518744ab20a3daf6d1a7c, type: 3}
   m_Name: 
@@ -125,7 +125,7 @@ MonoBehaviour:
   punchScaleIntensity: 0.4
   punchAnimDuration: 0.25
   fist: {fileID: 160291682324339883}
-  fistSpeed: 20
+  fistSpeed: 10
   fistTravelDistance: 5
   fistSpawnAnimDur: 0.2
 --- !u!114 &6752862179461673199
@@ -135,14 +135,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bd06ee376ecbfa479910ff787ddaaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   target: {fileID: 0}
   range: 3
-  fireRate: 0.4
+  fireRate: 0.2
   turnSpeed: 10
   partToRotate: {fileID: 0}
   turretPrefab: {fileID: 3993126904187544875}
@@ -156,14 +156,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 021eb98f739e3094ba89c96e85378f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 50
-  bulletDamage: 10
+  speed: 5
+  bulletDamage: 9
   type: 1
   shieldTimer: 5
   speedReducTimer: 5
   newSpeed: 1
+  followOnHit: 0
+  followDuration: 3

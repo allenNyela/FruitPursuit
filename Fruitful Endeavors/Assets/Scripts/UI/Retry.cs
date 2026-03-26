@@ -23,9 +23,14 @@ public class Retry : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     public void CloseSettings()
