@@ -109,14 +109,18 @@ public class Anim_ChatBubble : MonoBehaviour
         while (true)
         {
             bool hasTarget = turret != null && turret.target != null;
-            if (hasTarget && turret.target.gameObject.GetComponent<Enemy>().type == Enemy.EnemyType.Wanted && !turret.target.gameObject.GetComponent<Health>().shielded)
+            EnemyFruitMesh efm = hasTarget ? turret.target.gameObject.GetComponent<EnemyFruitMesh>() : null;
+            if (hasTarget && efm != null && efm.chosenPrefab == 3)
             {
+                Bubble_Countdown countdown = GetComponent<Bubble_Countdown>();
+                if (countdown != null) countdown.StartCountdown();
                 yield return StartCoroutine(HeadAttack());
                 yield return StartCoroutine(HeadIdleJelly());
             }
             else
             {
                 yield return StartCoroutine(HeadIdleContinuous());
+                yield return null;
             }
         }
     }
@@ -152,7 +156,6 @@ public class Anim_ChatBubble : MonoBehaviour
             head.transform.localScale = Vector3.Lerp(startScale, peakScale, Mathf.SmoothStep(0f, 1f, t / PopUpDur));
             yield return null;
         }
-
         // Phase 3: Damped spring on scale
         t = 0f;
         while (t < SpringDur)
@@ -239,18 +242,17 @@ public class Anim_ChatBubble : MonoBehaviour
     void SpawnBullet()
     {
         if (bulletPrefab == null) return;
+        if (turret != null && turret.target != null && turret.target.GetComponent<Health>().shielded) return;
         GameObject bullet = Instantiate(bulletPrefab, transform.TransformPoint(bulletSpawnOffset), Quaternion.identity);
         Bullet b = bullet.GetComponent<Bullet>();
         if (b == null || !b.followOnHit) Destroy(bullet, bulletLifetime);
         StartCoroutine(ScaleIn(bullet, bulletScaleInDuration));
 
-        // 将子弹指向 Turret 当前目标
         if (turret != null && turret.target != null)
         {
             if (b != null) b.Seek(turret.target);
         }
 
-        // 启动倒计时条
         Bubble_Countdown countdown = GetComponent<Bubble_Countdown>();
         if (countdown != null) countdown.StartCountdown();
     }

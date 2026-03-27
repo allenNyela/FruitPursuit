@@ -12,8 +12,9 @@ public class PhoneController : MonoBehaviour
     public Transform body;
 
     [Header("Attack Timing")]
-    public float attackDuration   = 1f;
-    public float intervalDuration = 2f;
+    public float attackPortion = 0.33f;
+    private float attackDuration;
+    private float intervalDuration;
 
     [Header("Bullet")]
     public GameObject bulletPrefab;
@@ -43,6 +44,7 @@ public class PhoneController : MonoBehaviour
 
     [Header("Anim Shake")]
     public float idleShakeStrength = 0.5f;
+    public float idleFloatSpeed    = 1f;
 
     float closeDuration     => attackDuration   * close_portion;
     float openDuration      => attackDuration   * open_portion;
@@ -52,14 +54,30 @@ public class PhoneController : MonoBehaviour
 
 
 
-    void Start() => StartCoroutine(AnimateLoop());
+    private Turret turret;
+
+    void Start()
+    {
+        turret = GetComponent<Turret>() ?? GetComponentInParent<Turret>();
+        float total = turret != null && turret.fireRate > 0f ? 1f / turret.fireRate : 3f;
+        attackDuration   = total * Mathf.Clamp01(attackPortion);
+        intervalDuration = total * (1f - Mathf.Clamp01(attackPortion));
+        StartCoroutine(AnimateLoop());
+    }
 
     IEnumerator AnimateLoop()
     {
         while (true)
         {
-            yield return Attack();
-            yield return IdleShake();
+            if (turret != null && turret.target != null)
+            {
+                yield return Attack();
+                yield return IdleShake();
+            }
+            else
+            {
+                yield return IdleContinuous();
+            }
         }
     }
 
@@ -98,13 +116,25 @@ public class PhoneController : MonoBehaviour
 
     IEnumerator IdleShake()
     {
-        Sequence s = DOTween.Sequence();
+        yield return IdleFloat(idleShakeDuration * 0.5f);
+    }
 
-        s.Join(phonePrefab.DOPunchPosition(new Vector3(0, idleShakeStrength, 0), idleShakeDuration, 5, 0.5f));
-        s.Join(phonePrefab.DOPunchRotation(new Vector3(0, 0, 5f), idleShakeDuration, 5, 0.5f));
+    IEnumerator IdleContinuous()
+    {
+        float startY = phonePrefab.localPosition.y;
+        while (turret == null || turret.target == null)
+        {
+            float y = startY + Mathf.Sin(Time.time * idleFloatSpeed * Mathf.PI) * idleShakeStrength;
+            phonePrefab.localPosition = new Vector3(phonePrefab.localPosition.x, y, phonePrefab.localPosition.z);
+            yield return null;
+        }
+        phonePrefab.localPosition = new Vector3(phonePrefab.localPosition.x, startY, phonePrefab.localPosition.z);
+    }
 
-        yield return s.WaitForCompletion();
-
-        yield return new WaitForSeconds(idlePauseDuration);
+    IEnumerator IdleFloat(float halfDur)
+    {
+        float startY = phonePrefab.localPosition.y;
+        yield return phonePrefab.DOLocalMoveY(startY + idleShakeStrength, halfDur).SetEase(Ease.InOutSine).WaitForCompletion();
+        yield return phonePrefab.DOLocalMoveY(startY, halfDur).SetEase(Ease.InOutSine).WaitForCompletion();
     }
 }

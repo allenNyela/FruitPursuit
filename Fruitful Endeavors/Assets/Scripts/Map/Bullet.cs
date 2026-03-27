@@ -31,20 +31,17 @@ public class Bullet : MonoBehaviour
     {
         if (target == null) { Destroy(gameObject); return; }
 
+        EnemyFruitHeight efh = target.GetComponentInChildren<EnemyFruitHeight>();
+        float h = efh != null ? efh.height * 0.5f : 0f;
+        Vector3 targetPos = target.position + new Vector3(0f, h, 0f);
+
         if (isFollowing)
         {
-            Vector3 offset = Vector3.zero;
-            if (type == BulletType.Shield)
-            {
-                EnemyFruitHeight efh = target.GetComponentInChildren<EnemyFruitHeight>();
-                float h = efh != null ? efh.height : 1f;
-                offset = new Vector3(0f, h * 0.5f, 0f);
-            }
-            transform.position = target.position + offset;
+            transform.position = targetPos;
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = targetPos - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
@@ -54,7 +51,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
+        transform.rotation = Quaternion.LookRotation(dir.normalized);
     }
 
     void HitTarget()

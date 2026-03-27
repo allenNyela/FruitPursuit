@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
 
     private void OnGUI()
     {
+        if (LevelManager.main == null || currencyUI == null) return;
         currencyUI.text = LevelManager.main.currency.ToString();
     }
 
