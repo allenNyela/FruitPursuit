@@ -12,12 +12,11 @@ public class Bubble_Countdown : MonoBehaviour
 
     private void Start()
     {
-        // 路径：同层级 Anim_ChatBubble → bulletPrefab → Bullet.followDuration
-        Anim_ChatBubble chatBubble = GetComponent<Anim_ChatBubble>();
+        Anim_ChatBubble chatBubble = GetComponent<Anim_ChatBubble>() ?? GetComponentInParent<Anim_ChatBubble>();
         if (chatBubble != null && chatBubble.bulletPrefab != null)
         {
             Bullet b = chatBubble.bulletPrefab.GetComponent<Bullet>();
-            if (b != null) bubbleDuration = b.followDuration;
+            if (b != null) { bubbleDuration = b.followDuration; Debug.Log($"bubbleDuration = {bubbleDuration}"); }
         }
     }
 
@@ -37,10 +36,10 @@ public class Bubble_Countdown : MonoBehaviour
         healthbar_fill.sizeDelta = new Vector2(ratio * maxWidth, healthbar_fill.sizeDelta.y);
     }
 
-    // 在 bullet 命中时调用此方法启动倒计时
     public void StartCountdown()
     {
         remaining      = bubbleDuration;
         isCountingDown = true;
+        Debug.Log($"StartCountdown called | bubbleDuration={bubbleDuration} | healthbar_fill={healthbar_fill} | healthCanvas={healthCanvas}");
     }
 }

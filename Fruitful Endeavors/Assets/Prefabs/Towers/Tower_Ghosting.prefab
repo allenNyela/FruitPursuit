@@ -93,6 +93,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -114,9 +116,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &596333002868211743
 GameObject:
@@ -176,14 +180,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862636128383850021}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.6332684, z: -1.1377275}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 3.6332684, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3590775831624437256}
   m_Father: {fileID: 4450922058423932569}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &1740124013013752142
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212,6 +216,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -237,9 +243,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5693838941598556078
 GameObject:
@@ -302,6 +310,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -323,9 +333,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7790285313579188008
 GameObject:
@@ -378,9 +390,8 @@ MonoBehaviour:
   phonePrefab: {fileID: 1815830909115897590}
   screen: {fileID: 1181648353125416813}
   body: {fileID: 1815830909115897590}
-  attackDuration: 0.1
-  intervalDuration: 0.4
-  bulletPrefab: {fileID: 144146740865764496, guid: 052713771c0937546ad5e45646ee25bd, type: 3}
+  attackPortion: 0.33
+  bulletPrefab: {fileID: 0}
   bulletSpawnOffset: {x: 0, y: 5, z: 2}
   bulletLifetime: 1
   bulletSpawnRot: {x: -20, y: 180, z: 0}
@@ -393,7 +404,8 @@ MonoBehaviour:
   snapBackScreenAngle: 40
   snapBackBodyAngle: 10
   floatHeight: 0.1
-  idleShakeStrength: 0.5
+  idleShakeStrength: 0.2
+  idleFloatSpeed: 1
 --- !u!114 &4763116337012654421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +424,7 @@ MonoBehaviour:
   turnSpeed: 10
   partToRotate: {fileID: 4450922058423932569}
   turretPrefab: {fileID: 7790285313579188008}
-  bulletPrefab: {fileID: 7564829120626686772, guid: f930f176eb499774198ef123cb142cf7, type: 3}
+  bulletPrefab: {fileID: 144146740865764496, guid: 052713771c0937546ad5e45646ee25bd, type: 3}
   firePoint: {fileID: 4251388147718580582}
   enemyTag: Enemy
 --- !u!1001 &1723954620298582150
