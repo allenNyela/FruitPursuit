@@ -13,12 +13,12 @@ public class Healthbar_Enemy : MonoBehaviour
         health = GetComponentInParent<Health>();
         canvasWidth = healthCanvas.rect.width;
 
-        EnemyFruitHeight fruitHeight = health.GetComponentInChildren<EnemyFruitHeight>();
+        Enemy_Stats enemyStats = health.GetComponentInChildren<Enemy_Stats>();
 
-        if (fruitHeight != null)
+        if (enemyStats != null)
         {
             Vector3 pos = healthCanvas.localPosition;
-            pos.y = fruitHeight.height;
+            pos.y = enemyStats.height;
             healthCanvas.localPosition = pos;
         }
     }

@@ -515,7 +515,8 @@ MonoBehaviour:
   bubblePhaseOffset: 0.48
   bulletScaleInDuration: 0.35
   bulletSpawnScale: 0.1
-  bulletFinalScale: 0.5
+  bulletFinalScale: 1
+  isTargeting: 0
 --- !u!114 &5716432758953431597
 MonoBehaviour:
   m_ObjectHideFlags: 0

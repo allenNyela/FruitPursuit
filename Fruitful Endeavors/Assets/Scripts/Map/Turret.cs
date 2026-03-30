@@ -29,9 +29,12 @@ public class Turret : MonoBehaviour
         turretPrefab = prefab;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Anim_ChatBubble anim;
+
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, .5f);
+        anim = GetComponent<Anim_ChatBubble>();
     }
 
     // Update is called once per frame
@@ -39,13 +42,20 @@ public class Turret : MonoBehaviour
     {
         if (target == null) { return; }
 
-        Vector3 dir = transform.position - target.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        if (anim == null || anim.isTargeting)
+        {
+            Vector3 dir = transform.position - target.position;
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        }
 
         if (fireCountdown <= 0f)
         {
+            if (anim != null && bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield)
+            {
+                return;
+            }
             if ((!(target.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 3)) && (bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield || bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Healing))
             {
                 return;

@@ -90,7 +90,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2730144422520446018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47393cb057e884459256664df63e45a, type: 3}
+  m_Script: {fileID: 11500000, guid: c894e78a1d4eb2e49a61ef362139ccb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitHeight
-  height: 1
+  height: 1.5
+  isBubbleTarget: 0
+  speed: 10
+  health: 12

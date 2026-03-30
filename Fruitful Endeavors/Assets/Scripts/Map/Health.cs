@@ -21,6 +21,12 @@ public class Health : MonoBehaviour
         maxHealth = health;
     }
 
+    private void Start()
+    {
+        Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
+        if (stats != null) { health = stats.health; maxHealth = stats.health; }
+    }
+
     void Update()
     {
         if (shielded && shieldCountdown >= 0)

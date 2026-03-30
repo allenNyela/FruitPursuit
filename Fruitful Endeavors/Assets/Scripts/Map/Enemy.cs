@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         target = Waypoint.points[0];
+        Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
+        if (stats != null) baseSpeed = stats.speed;
         currSpeed = baseSpeed;
         baseY = transform.position.y;
 

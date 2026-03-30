@@ -9,11 +9,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] public BulletType type;
     [SerializeField] public float shieldTimer = 5f;
     [SerializeField] public float speedReducTimer = 5f;
-    [SerializeField] public float newSpeed = 1f;
+    public float slowdownFactor = 0.333f;
 
     public bool  followOnHit    = false;
     public float followDuration = 3f;
+    public float overlapRadius  = 1.5f;
     private bool isFollowing    = false;
+
+    private static readonly System.Collections.Generic.List<Bullet> followingBullets = new();
+
+    private void OnDestroy() { followingBullets.Remove(this); }
 
     public void Seek(Transform _target)
     {
@@ -31,7 +36,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null) { Destroy(gameObject); return; }
 
-        EnemyFruitHeight efh = target.GetComponentInChildren<EnemyFruitHeight>();
+        Enemy_Stats efh = target.GetComponentInChildren<Enemy_Stats>();
         float h = efh != null ? efh.height * 0.5f : 0f;
         Vector3 targetPos = target.position + new Vector3(0f, h, 0f);
 
@@ -68,13 +73,22 @@ public class Bullet : MonoBehaviour
             target.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         } else if (type == BulletType.Slowdown)
         {
-            target.gameObject.GetComponent<Health>().ChangeSpeed(newSpeed);
+            target.gameObject.GetComponent<Health>().ChangeSpeed(target.GetComponent<Enemy>().baseSpeed * slowdownFactor);
             target.gameObject.GetComponent<Health>().speedChanged = true;
             target.gameObject.GetComponent<Health>().speedCountdown = speedReducTimer;
         }
         if (followOnHit)
         {
+            foreach (Bullet other in followingBullets)
+            {
+                if (Vector3.Distance(transform.position, other.transform.position) < overlapRadius)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+            }
             isFollowing = true;
+            followingBullets.Add(this);
             Destroy(gameObject, followDuration);
         }
         else

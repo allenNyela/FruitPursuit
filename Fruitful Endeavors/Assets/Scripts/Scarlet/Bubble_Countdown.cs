@@ -16,7 +16,7 @@ public class Bubble_Countdown : MonoBehaviour
         if (chatBubble != null && chatBubble.bulletPrefab != null)
         {
             Bullet b = chatBubble.bulletPrefab.GetComponent<Bullet>();
-            if (b != null) { bubbleDuration = b.followDuration; Debug.Log($"bubbleDuration = {bubbleDuration}"); }
+            if (b != null) { bubbleDuration = b.followDuration; }
         }
     }
 
@@ -40,6 +40,5 @@ public class Bubble_Countdown : MonoBehaviour
     {
         remaining      = bubbleDuration;
         isCountingDown = true;
-        Debug.Log($"StartCountdown called | bubbleDuration={bubbleDuration} | healthbar_fill={healthbar_fill} | healthCanvas={healthCanvas}");
     }
 }
