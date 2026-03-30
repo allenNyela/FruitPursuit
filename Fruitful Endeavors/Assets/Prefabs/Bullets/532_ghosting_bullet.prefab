@@ -98,6 +98,8 @@ MonoBehaviour:
   type: 1
   shieldTimer: 5
   speedReducTimer: 5
-  newSpeed: 1
+  slowdownFactor: 0.333
   followOnHit: 0
   followDuration: 3
+  overlapRadius: 1.5
+  bulletLifeTime: 0.8

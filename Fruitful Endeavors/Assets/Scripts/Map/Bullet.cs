@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     public float followDuration = 3f;
     public float overlapRadius  = 1.5f;
     private bool isFollowing    = false;
+    [SerializeField] private float bulletLifeTime = .1f;
 
     private static readonly System.Collections.Generic.List<Bullet> followingBullets = new();
 
@@ -35,6 +36,12 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if (target == null) { Destroy(gameObject); return; }
+
+        if (bulletLifeTime <= 0f)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         Enemy_Stats efh = target.GetComponentInChildren<Enemy_Stats>();
         float h = efh != null ? efh.height * 0.5f : 0f;
@@ -57,6 +64,7 @@ public class Bullet : MonoBehaviour
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
         transform.rotation = Quaternion.LookRotation(dir.normalized);
+        bulletLifeTime -= Time.deltaTime;
     }
 
     void HitTarget()
