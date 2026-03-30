@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null) { Destroy(gameObject); return; }
 
-        if (bulletLifeTime <= 0f)
+        if (!followOnHit && bulletLifeTime <= 0f)
         {
             Destroy(gameObject);
             return;
