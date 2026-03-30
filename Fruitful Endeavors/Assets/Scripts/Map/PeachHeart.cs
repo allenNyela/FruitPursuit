@@ -12,8 +12,11 @@ public class PeachHeart : MonoBehaviour
     [SerializeField] GameObject gameOverscreen;
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject UI;
+    public GameObject vfx;
 
     private Color startColor;
+    private Coroutine vfxCoroutine;
+    private float vfxTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +32,8 @@ public class PeachHeart : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!(collision.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 3)) {
+        Enemy_Stats stats = collision.gameObject.GetComponentInChildren<Enemy_Stats>();
+        if (stats == null || !stats.isBubbleTarget) {
             health -= collision.gameObject.GetComponent<Health>().damage;
             // sr.color = Color.gray;
             // GetComponent<SoundEffectPlayer>().PlaySoundEffect();
@@ -40,10 +44,33 @@ public class PeachHeart : MonoBehaviour
         } else
         {
             health += collision.gameObject.GetComponent<Health>().damage;
+            ShowVfx();
         }
         
     }
 
+
+    void ShowVfx()
+    {
+        if (vfx == null) return;
+        vfxTimer = 2f;
+        if (vfxCoroutine == null)
+        {
+            vfx.SetActive(true);
+            vfxCoroutine = StartCoroutine(VfxTimeout());
+        }
+    }
+
+    IEnumerator VfxTimeout()
+    {
+        while (vfxTimer > 0f)
+        {
+            vfxTimer -= Time.deltaTime;
+            yield return null;
+        }
+        vfx.SetActive(false);
+        vfxCoroutine = null;
+    }
 
     public IEnumerator showCastleDamage()
     {
