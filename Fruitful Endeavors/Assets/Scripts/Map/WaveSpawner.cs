@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
     private bool isSpawning = false;
     private bool startCountdown = false;
     public TMP_Text countdownText;
+    public GameObject startButton;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -38,6 +39,12 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
+        //StartCoroutine(StartWave());
+    }
+
+    public void startRound()
+    {
+        startButton.SetActive(false);
         StartCoroutine(StartWave());
     }
 

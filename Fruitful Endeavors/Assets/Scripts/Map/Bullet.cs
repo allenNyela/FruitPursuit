@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null) { Destroy(gameObject); return; }
+        if (target == null && type != BulletType.Punch) { Destroy(gameObject); return; }
 
         if (bulletLifeTime <= 0f)
         {
@@ -84,6 +84,9 @@ public class Bullet : MonoBehaviour
             target.gameObject.GetComponent<Health>().ChangeSpeed(target.GetComponent<Enemy>().baseSpeed * slowdownFactor);
             target.gameObject.GetComponent<Health>().speedChanged = true;
             target.gameObject.GetComponent<Health>().speedCountdown = speedReducTimer;
+        } else if (type == BulletType.Punch)
+        {
+            return;
         }
         if (followOnHit)
         {
@@ -104,12 +107,22 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (type == BulletType.Punch)
+        {
+            other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+        }
+        
+    }
+
     public enum BulletType
     {
         Shield,
         Attack,
         Healing,
-        Slowdown
+        Slowdown,
+        Punch
     }
 }
