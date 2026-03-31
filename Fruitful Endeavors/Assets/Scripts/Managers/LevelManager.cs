@@ -15,10 +15,14 @@ public class LevelManager : MonoBehaviour
         main = this;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //currency = 20;
+        foreach (GameObject t in towers)
+        {
+            Turret turret = t.GetComponent<Turret>();
+            if (turret != null) turret.isPreview = true;
+        }
     }
 
     // Update is called once per frame
@@ -54,22 +58,27 @@ public class LevelManager : MonoBehaviour
             case "Ghost":
                 towers[0].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[0].SetActive(true);
+                towers[0].GetComponent<Turret>()?.ShowRange(true);
                 break;
             case "Another Time":
                 towers[1].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[1].SetActive(true);
+                towers[1].GetComponent<Turret>()?.ShowRange(true);
                 break;
             case "Chat Bubble":
                 towers[2].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[2].SetActive(true);
+                towers[2].GetComponent<Turret>()?.ShowRange(true);
                 break;
             case "Gift":
                 towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[3].SetActive(true);
+                towers[3].GetComponent<Turret>()?.ShowRange(true);
                 break;
             case "Punch":
                 towers[4].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
                 towers[4].SetActive(true);
+                towers[4].GetComponent<Turret>()?.ShowRange(true);
                 break;
         }
     }
@@ -79,23 +88,23 @@ public class LevelManager : MonoBehaviour
         switch (BuildManager.main.GetSelectedTower().name)
         {
             case "Ghost":
-                //towers[0].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[0].GetComponent<Turret>()?.ShowRange(false);
                 towers[0].SetActive(false);
                 break;
             case "Another Time":
-                //towers[1].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[1].GetComponent<Turret>()?.ShowRange(false);
                 towers[1].SetActive(false);
                 break;
             case "Chat Bubble":
-                //towers[2].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[2].GetComponent<Turret>()?.ShowRange(false);
                 towers[2].SetActive(false);
                 break;
             case "Gift":
-                //towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[3].GetComponent<Turret>()?.ShowRange(false);
                 towers[3].SetActive(false);
                 break;
             case "Punch":
-                //towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+                towers[4].GetComponent<Turret>()?.ShowRange(false);
                 towers[4].SetActive(false);
                 break;
         }

@@ -11160,7 +11160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9005063833813147671, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -16381,6 +16381,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2771131908088890941, guid: 26437a1ae793fe741b8cdc2d4e7fdd99, type: 3}
+      propertyPath: deathVfx
+      value: 
+      objectReference: {fileID: 3719875545375078249, guid: 489c10ce518f41d4a802f5f5a58a9605, type: 3}
     - target: {fileID: 3162583734936910369, guid: 26437a1ae793fe741b8cdc2d4e7fdd99, type: 3}
       propertyPath: m_Name
       value: Enemy

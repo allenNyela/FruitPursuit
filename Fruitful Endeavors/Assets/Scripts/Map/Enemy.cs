@@ -22,6 +22,16 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public EnemyType type;
 
+    public Vector3 AimPosition
+    {
+        get
+        {
+            Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
+            float h = stats != null ? stats.height * 0.5f : 0f;
+            return transform.position + new Vector3(0f, h, 0f);
+        }
+    }
+
     private void Start()
     {
         target = Waypoint.points[0];

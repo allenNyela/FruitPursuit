@@ -316,6 +316,7 @@ MonoBehaviour:
   shieldCountdown: 2
   speedCountdown: 2
   damage: 10
+  deathVfx: {fileID: 3719875545375078249, guid: 489c10ce518f41d4a802f5f5a58a9605, type: 3}
 --- !u!114 &4592372570732104115
 MonoBehaviour:
   m_ObjectHideFlags: 0
