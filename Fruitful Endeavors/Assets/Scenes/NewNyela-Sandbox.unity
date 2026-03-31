@@ -7145,7 +7145,10 @@ MonoBehaviour:
   turretPrefab: {fileID: 0}
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  rangeSphere: {fileID: 0}
   enemyTag: 
+  isPreview: 0
+  hoverPixelRadius: 0
 --- !u!4 &907537057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4770399044465246198, guid: 25315dccb50376a42a12fba915d08f0d, type: 3}
@@ -11160,7 +11163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005063833813147671, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
