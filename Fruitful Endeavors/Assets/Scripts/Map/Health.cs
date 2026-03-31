@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] public float shieldCountdown = 2f;
     [SerializeField] public float speedCountdown = 2f;
     [SerializeField] public int damage = 10;
+    [SerializeField] public GameObject deathVfx;
 
     private bool isDestroyed = false;
 
@@ -56,34 +57,37 @@ public class Health : MonoBehaviour
             //Debug.Log(health);
         }     
 
-        if (health <= 0 && !isDestroyed)
-        {
-
-           // GetComponent<SoundEffectPlayer>().PlayNow();
-            WaveSpawner.onEnemyDestroy.Invoke();
-            LevelManager.main.IncreaseCurrency(currencyWorth);
-            isDestroyed = true;
-            Destroy(gameObject);
-        }
+        if (health <= 0 && !isDestroyed) KillEnemy();
     }
 
     public void GiveHealth(int amt)
     {
         health += amt;
-        if (health >= maxHealth)
-        {
-            health = maxHealth;
-        }
+        if (health >= maxHealth) health = maxHealth;
+        if (health <= 0 && !isDestroyed) KillEnemy();
+    }
 
-        if (health <= 0 && !isDestroyed)
+    void KillEnemy()
+    {
+        // GetComponent<SoundEffectPlayer>().PlayNow();
+        if (deathVfx != null)
         {
-
-            // GetComponent<SoundEffectPlayer>().PlayNow();
-            //EnemySpawner.onEnemyDestroy.Invoke();
-            //LevelManager.main.IncreaseCurrency(currencyWorth);
-            isDestroyed = true;
-            Destroy(gameObject);
+            Enemy enemy = GetComponent<Enemy>();
+            Vector3 spawnPos = enemy != null ? enemy.AimPosition : transform.position;
+            Debug.Log($"[KillEnemy] Spawning VFX at {spawnPos}");
+            GameObject vfxInstance = Instantiate(deathVfx, spawnPos, Quaternion.identity);
+            ParticleSystem ps = vfxInstance.GetComponentInChildren<ParticleSystem>();
+            float duration = ps != null ? ps.main.duration + ps.main.startLifetime.constantMax : 2f;
+            Destroy(vfxInstance, duration);
         }
+        else
+        {
+            Debug.LogWarning("[KillEnemy] deathVfx is null — assign it in the Inspector on the enemy prefab");
+        }
+        WaveSpawner.onEnemyDestroy.Invoke();
+        LevelManager.main.IncreaseCurrency(currencyWorth);
+        isDestroyed = true;
+        Destroy(gameObject);
     }
 
     public void ChangeSpeed(float tempSpeed)

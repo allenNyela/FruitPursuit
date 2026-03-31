@@ -18,6 +18,7 @@ public class Turret : MonoBehaviour
     public GameObject turretPrefab;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public GameObject rangeSphere;
 
     public string enemyTag = "Enemy";  
     
@@ -35,11 +36,42 @@ public class Turret : MonoBehaviour
     {
         InvokeRepeating("UpdateTarget", 0f, .5f);
         anim = GetComponent<Anim_ChatBubble>();
+        if (rangeSphere != null)
+        {
+            float parentScale = transform.lossyScale.x;
+            rangeSphere.transform.localScale = Vector3.one * range * 2f / parentScale;
+        }
+    }
+
+    [HideInInspector] public bool isPreview = false;
+
+    public void ShowRange(bool show)
+    {
+        if (rangeSphere != null) rangeSphere.SetActive(show);
+    }
+
+    public float hoverPixelRadius = 2500f;
+    private bool wasHovered = false;
+
+    void CheckHover()
+    {
+        if (isPreview) return;
+        if (Camera.main == null) { Debug.LogError("Camera.main is null!"); return; }
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        float dist = Vector2.Distance(new Vector2(screenPos.x, screenPos.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        bool hovered = dist < hoverPixelRadius;
+        Debug.Log($"dist: {dist}, hovered: {hovered}");
+        if (hovered != wasHovered)
+        {
+            wasHovered = hovered;
+            ShowRange(hovered);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckHover();
         if (target == null) { return; }
 
         if (anim == null || anim.isTargeting)

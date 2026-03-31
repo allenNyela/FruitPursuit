@@ -7145,7 +7145,10 @@ MonoBehaviour:
   turretPrefab: {fileID: 0}
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  rangeSphere: {fileID: 0}
   enemyTag: 
+  isPreview: 0
+  hoverPixelRadius: 0
 --- !u!4 &907537057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4770399044465246198, guid: 25315dccb50376a42a12fba915d08f0d, type: 3}
@@ -16381,6 +16384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2771131908088890941, guid: 26437a1ae793fe741b8cdc2d4e7fdd99, type: 3}
+      propertyPath: deathVfx
+      value: 
+      objectReference: {fileID: 3719875545375078249, guid: 489c10ce518f41d4a802f5f5a58a9605, type: 3}
     - target: {fileID: 3162583734936910369, guid: 26437a1ae793fe741b8cdc2d4e7fdd99, type: 3}
       propertyPath: m_Name
       value: Enemy

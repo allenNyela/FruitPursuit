@@ -37,15 +37,14 @@ public class Bullet : MonoBehaviour
     {
         if (target == null && type != BulletType.Punch) { Destroy(gameObject); return; }
 
-        if (bulletLifeTime <= 0f)
+        if (!followOnHit && bulletLifeTime <= 0f)
         {
             Destroy(gameObject);
             return;
         }
 
-        Enemy_Stats efh = target.GetComponentInChildren<Enemy_Stats>();
-        float h = efh != null ? efh.height * 0.5f : 0f;
-        Vector3 targetPos = target.position + new Vector3(0f, h, 0f);
+        Enemy enemy = target.GetComponent<Enemy>();
+        Vector3 targetPos = enemy != null ? enemy.AimPosition : target.position;
 
         if (isFollowing)
         {
