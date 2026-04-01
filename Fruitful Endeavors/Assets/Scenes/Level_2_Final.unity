@@ -18644,18 +18644,23 @@ MonoBehaviour:
   - name: Ghost
     cost: 10
     prefab: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
+    towerPreview: {fileID: 1881922604}
   - name: Another Time
     cost: 5
     prefab: {fileID: 1612157446659292786, guid: 1c4159de885fedf47803e8569a14ed76, type: 3}
+    towerPreview: {fileID: 683852065}
   - name: Chat Bubble
     cost: 10
     prefab: {fileID: 8359516918488444716, guid: 508fada2eecad5041bb9fcc2d4be335b, type: 3}
+    towerPreview: {fileID: 1585205455}
   - name: Gift
     cost: 20
     prefab: {fileID: 7003331462794786690, guid: f470c1fc2fd95da4287c0dc7840f541d, type: 3}
+    towerPreview: {fileID: 1953178524}
   - name: Punch
     cost: 20
     prefab: {fileID: 3993126904187544875, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+    towerPreview: {fileID: 1712607368}
 --- !u!114 &1579222765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18670,12 +18675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   startpoint: {fileID: 0}
-  towers:
-  - {fileID: 1881922604}
-  - {fileID: 683852065}
-  - {fileID: 1585205455}
-  - {fileID: 1953178524}
-  - {fileID: 1712607368}
+  rotation: 0
   currency: 25
 --- !u!1001 &1581976471
 PrefabInstance:

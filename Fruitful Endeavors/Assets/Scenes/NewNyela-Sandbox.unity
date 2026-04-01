@@ -14271,11 +14271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   startpoint: {fileID: 0}
-  towers:
-  - {fileID: 1484547301}
-  - {fileID: 1992890035}
-  - {fileID: 996648040}
-  - {fileID: 1621548816}
+  rotation: 0
   currency: 15
 --- !u!114 &1916061726
 MonoBehaviour:
@@ -14293,15 +14289,19 @@ MonoBehaviour:
   - name: Ghost
     cost: 10
     prefab: {fileID: 7790285313579188008, guid: b37849e67bbffe34eb7f222cd6d71c8c, type: 3}
+    towerPreview: {fileID: 1484547301}
   - name: Another Time
     cost: 5
     prefab: {fileID: 1612157446659292786, guid: 1c4159de885fedf47803e8569a14ed76, type: 3}
+    towerPreview: {fileID: 1992890035}
   - name: Chat Bubble
     cost: 10
     prefab: {fileID: 8359516918488444716, guid: 508fada2eecad5041bb9fcc2d4be335b, type: 3}
+    towerPreview: {fileID: 996648040}
   - name: Gift
     cost: 20
     prefab: {fileID: 7003331462794786690, guid: f470c1fc2fd95da4287c0dc7840f541d, type: 3}
+    towerPreview: {fileID: 1621548816}
 --- !u!114 &1916061727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14321,7 +14321,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   difficultyScalingFactor: 0.8
   countdownText: {fileID: 0}
-  startButton: {fileID: 0}
+  startButton: {fileID: 1321590713}
 --- !u!4 &1916061728
 Transform:
   m_ObjectHideFlags: 0
