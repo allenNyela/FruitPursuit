@@ -95,5 +95,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitHeight
   height: 1.5
   isBubbleTarget: 0
-  speed: 10
+  speed: 6
   health: 12

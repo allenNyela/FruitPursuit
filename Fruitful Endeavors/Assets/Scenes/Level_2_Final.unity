@@ -18655,7 +18655,7 @@ MonoBehaviour:
     prefab: {fileID: 7003331462794786690, guid: f470c1fc2fd95da4287c0dc7840f541d, type: 3}
   - name: Punch
     cost: 20
-    prefab: {fileID: 3993126904187544875, guid: 6ed740723bc398340a47c95e7e69d041, type: 3}
+    prefab: {fileID: 3993126904187544875, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
 --- !u!114 &1579222765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18675,7 +18675,7 @@ MonoBehaviour:
   - {fileID: 683852065}
   - {fileID: 1585205455}
   - {fileID: 1953178524}
-  - {fileID: 0}
+  - {fileID: 1712607368}
   currency: 25
 --- !u!1001 &1581976471
 PrefabInstance:
@@ -20010,9 +20010,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2400934723808603377, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 004590cf7b3109a4e959cb2b751f44c4, type: 2}
+    - target: {fileID: 2400934723808603377, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 004590cf7b3109a4e959cb2b751f44c4, type: 2}
     - target: {fileID: 3993126904187544875, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
       propertyPath: m_Name
       value: Tower_Punch_Selection
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993126904187544875, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4332954803485753233, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20054,6 +20066,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4953855859325360226, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 004590cf7b3109a4e959cb2b751f44c4, type: 2}
+    - target: {fileID: 4953855859325360226, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 004590cf7b3109a4e959cb2b751f44c4, type: 2}
+    - target: {fileID: 6514803519350387985, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 004590cf7b3109a4e959cb2b751f44c4, type: 2}
     - target: {fileID: 6752862179461673199, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -20063,6 +20087,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+--- !u!1 &1712607368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3993126904187544875, guid: cfc6936a20bad5746a4ed928454165ed, type: 3}
+  m_PrefabInstance: {fileID: 1712607367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1722161919
 PrefabInstance:
   m_ObjectHideFlags: 0

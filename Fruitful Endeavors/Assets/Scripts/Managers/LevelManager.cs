@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 
     public Transform[] path;
     public Transform startpoint;
-    public GameObject[] towers;
+    public float rotation = 0;
 
     public int currency;
 
@@ -17,18 +17,49 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        //currency = 20;
-        foreach (GameObject t in towers)
-        {
-            Turret turret = t.GetComponent<Turret>();
-            if (turret != null) turret.isPreview = true;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.mouseScrollDelta.y != 0) 
+        {
+            if (Input.mouseScrollDelta.y < 0)
+            {
+                rotateTurretLeft();
+            } else
+            {
+                rotateTurretRight();
+            }
+        }
+    }
 
+    public void rotateTurretRight()
+    {
+        if (rotation == 270)
+        {
+            rotation = 0;
+            BuildManager.main.GetSelectedTower().towerPreview.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        } else
+        {
+            rotation += 90;
+            BuildManager.main.GetSelectedTower().towerPreview.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        }
+    }
+
+    public void rotateTurretLeft()
+    {
+        if (rotation == -270)
+        {
+            rotation = 0;
+            BuildManager.main.GetSelectedTower().towerPreview.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        }
+        else
+        {
+            rotation -= 90;
+            BuildManager.main.GetSelectedTower().towerPreview.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        }
     }
 
     public void IncreaseCurrency(int amount)
@@ -53,60 +84,15 @@ public class LevelManager : MonoBehaviour
 
     public void showPreview(Plot plot)
     {
-        switch (BuildManager.main.GetSelectedTower().name)
-        {
-            case "Ghost":
-                towers[0].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
-                towers[0].SetActive(true);
-                towers[0].GetComponent<Turret>()?.ShowRange(true);
-                break;
-            case "Another Time":
-                towers[1].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
-                towers[1].SetActive(true);
-                towers[1].GetComponent<Turret>()?.ShowRange(true);
-                break;
-            case "Chat Bubble":
-                towers[2].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
-                towers[2].SetActive(true);
-                towers[2].GetComponent<Turret>()?.ShowRange(true);
-                break;
-            case "Gift":
-                towers[3].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
-                towers[3].SetActive(true);
-                towers[3].GetComponent<Turret>()?.ShowRange(true);
-                break;
-            case "Punch":
-                towers[4].transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
-                towers[4].SetActive(true);
-                towers[4].GetComponent<Turret>()?.ShowRange(true);
-                break;
-        }
+        BuildManager.main.GetSelectedTower().towerPreview.transform.position = new Vector3(plot.transform.position.x, plot.transform.position.y + .5f, plot.transform.position.z);
+        BuildManager.main.GetSelectedTower().towerPreview.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        BuildManager.main.GetSelectedTower().towerPreview.SetActive(true);
+        BuildManager.main.GetSelectedTower().towerPreview.GetComponent<Turret>()?.ShowRange(true);
     }
 
     public void hidePreview(Plot plot)
     {
-        switch (BuildManager.main.GetSelectedTower().name)
-        {
-            case "Ghost":
-                towers[0].GetComponent<Turret>()?.ShowRange(false);
-                towers[0].SetActive(false);
-                break;
-            case "Another Time":
-                towers[1].GetComponent<Turret>()?.ShowRange(false);
-                towers[1].SetActive(false);
-                break;
-            case "Chat Bubble":
-                towers[2].GetComponent<Turret>()?.ShowRange(false);
-                towers[2].SetActive(false);
-                break;
-            case "Gift":
-                towers[3].GetComponent<Turret>()?.ShowRange(false);
-                towers[3].SetActive(false);
-                break;
-            case "Punch":
-                towers[4].GetComponent<Turret>()?.ShowRange(false);
-                towers[4].SetActive(false);
-                break;
-        }
+        BuildManager.main.GetSelectedTower().towerPreview.GetComponent<Turret>()?.ShowRange(false);
+        BuildManager.main.GetSelectedTower().towerPreview.SetActive(false);
     }
 }

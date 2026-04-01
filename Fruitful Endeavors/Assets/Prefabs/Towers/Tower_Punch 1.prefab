@@ -62,8 +62,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,11 +83,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &2201828442946815458
 SphereCollider:
@@ -182,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       propertyPath: m_Name
-      value: Tower_Punch
+      value: Tower_Punch 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       propertyPath: m_IsActive
@@ -203,23 +199,91 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 819293295549264741}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -5074854753711815471, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6752862179461673199}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
+      addedObject: {fileID: 659960152767039520}
+    - targetCorrespondingSourceObject: {fileID: -5074854753711815471, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4714336454265322196}
+      addedObject: {fileID: 7494623398347044758}
+    - targetCorrespondingSourceObject: {fileID: -5074854753711815471, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8039293429970044432}
   m_SourcePrefab: {fileID: 100100000, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
 --- !u!1 &160291682324339883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5074854753711815471, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
   m_PrefabInstance: {fileID: 4299536946573236346}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &764968020092970998 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -5677156427693113460, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
-  m_PrefabInstance: {fileID: 4299536946573236346}
+--- !u!114 &659960152767039520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160291682324339883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021eb98f739e3094ba89c96e85378f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  bulletDamage: 10
+  type: 4
+  shieldTimer: 5
+  speedReducTimer: 5
+  slowdownFactor: 0.333
+  followOnHit: 0
+  followDuration: 3
+  overlapRadius: 1.5
+  bulletLifeTime: 0.48
+--- !u!54 &7494623398347044758
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160291682324339883}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!65 &8039293429970044432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160291682324339883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001, y: 0.0011399599, z: 0.00090992}
+  m_Center: {x: 0.00033052004, y: -0.0005459601, z: -0.00009897002}
 --- !u!1 &1205422566543794323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3103406077920639209, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
@@ -237,7 +301,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05ff3f80e1518744ab20a3daf6d1a7c, type: 3}
   m_Name: 
@@ -249,54 +313,8 @@ MonoBehaviour:
   punchAnimDuration: 0.25
   fist: {fileID: 160291682324339883}
   fistSpeed: 10
-  fistTravelDistance: 5
+  fistTravelDistance: 8
   fistSpawnAnimDur: 0.2
---- !u!114 &6752862179461673199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd06ee376ecbfa479910ff787ddaaea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Turret
-  target: {fileID: 0}
-  range: 3
-  fireRate: 0.2
-  turnSpeed: 10
-  partToRotate: {fileID: 764968020092970998}
-  turretPrefab: {fileID: 3993126904187544875}
-  bulletPrefab: {fileID: 160291682324339883}
-  firePoint: {fileID: 764968020092970998}
-  rangeSphere: {fileID: 7329262759820455474}
-  enemyTag: Enemy
-  isPreview: 0
-  hoverPixelRadius: 60
---- !u!114 &4714336454265322196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021eb98f739e3094ba89c96e85378f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 5
-  bulletDamage: 9
-  type: 1
-  shieldTimer: 5
-  speedReducTimer: 5
-  slowdownFactor: 0.333
-  followOnHit: 0
-  followDuration: 3
-  overlapRadius: 1.5
-  bulletLifeTime: 0.1
 --- !u!4 &4332954803485753233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}

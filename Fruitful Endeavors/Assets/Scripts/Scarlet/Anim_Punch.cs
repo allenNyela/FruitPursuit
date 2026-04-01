@@ -70,7 +70,8 @@ public class Anim_Punch : MonoBehaviour
         {
             if (instance == null) yield break;
             float step = fistSpeed * Time.deltaTime;
-            instance.transform.position += direction * step;
+            instance.transform.position += transform.forward * step;
+            //instance.transform.position += direction * step;
             traveled += step;
             yield return null;
         }
@@ -116,4 +117,5 @@ public class Anim_Punch : MonoBehaviour
 
         arm.transform.localScale = baseScale;
     }
+    
 }
