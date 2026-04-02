@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1013944881685084849}
   - component: {fileID: 421457499459585101}
+  - component: {fileID: 6639405269609125761}
   m_Layer: 0
-  m_Name: Enemy_grape
+  m_Name: Enemy_grape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,6 +50,21 @@ MonoBehaviour:
   isBubbleTarget: 0
   speed: 5
   health: 10
+  damage: 10
+--- !u!114 &6639405269609125761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278090518867776169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6256713773d654fa0433629ce5d15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_SplitGrape
+  grape2Prefab: {fileID: 3162583734936910369, guid: 70e340ee8cbf7a74485c48e9d200ace2, type: 3}
+  spawnCount: 2
 --- !u!1001 &8464550869315301761
 PrefabInstance:
   m_ObjectHideFlags: 0

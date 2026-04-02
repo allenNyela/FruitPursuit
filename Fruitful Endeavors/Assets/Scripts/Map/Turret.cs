@@ -60,7 +60,7 @@ public class Turret : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         float dist = Vector2.Distance(new Vector2(screenPos.x, screenPos.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         bool hovered = dist < hoverPixelRadius;
-        Debug.Log($"dist: {dist}, hovered: {hovered}");
+        //Debug.Log($"dist: {dist}, hovered: {hovered}");
         if (hovered != wasHovered)
         {
             wasHovered = hovered;

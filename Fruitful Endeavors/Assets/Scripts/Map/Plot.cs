@@ -25,7 +25,7 @@ public class Plot : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("Mouse hover!");
+        //Debug.Log("Mouse hover!");
         if (!turretFilled)
         {
             LevelManager.main.showPreview(this);

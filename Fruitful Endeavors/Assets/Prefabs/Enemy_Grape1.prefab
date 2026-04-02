@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5616919200669351861}
   - component: {fileID: 4494016925979689761}
   m_Layer: 5
-  m_Name: HealthCanvas
+  m_Name: HealthCanvas1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.005}
   m_SizeDelta: {x: 0.8, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5616919200669351861
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2779229722099569632}
   - component: {fileID: 9064445125130197655}
   m_Layer: 5
-  m_Name: Healthbar_fill
+  m_Name: Healthbar_fill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,9 +176,8 @@ GameObject:
   - component: {fileID: 2771131908088890941}
   - component: {fileID: 4592372570732104115}
   - component: {fileID: 2994114874623317469}
-  - component: {fileID: -6195203050518719168}
   m_Layer: 0
-  m_Name: Enemy_Level1
+  m_Name: Enemy_Grape1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,10 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
   fruitPrefabs:
-  - {fileID: 4278090518867776169, guid: 6233e61cd45278b419992bb8b4457752, type: 3}
-  - {fileID: 7159503177062831574, guid: dc2695d625f99e243b2ab1947a9e4535, type: 3}
-  - {fileID: 1710433020049593376, guid: 700df31bcb52bc54a800a7273e0943d9, type: 3}
-  - {fileID: 4884356384284367817, guid: 34573e89629b0bf43a428201ec16f7ca, type: 3}
+  - {fileID: 3742652705305273358, guid: 52be37cb47946f242b14d911380f343f, type: 3}
   yOffset: 0
   chosenPrefab: 0
 --- !u!114 &2994114874623317469
@@ -352,27 +348,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Healthbar_Enemy
   healthCanvas: {fileID: 4815881598074257607}
   healthbar_fill: {fileID: 7584977765478371980}
---- !u!65 &-6195203050518719168
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3162583734936910369}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3827329270847438191
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +361,7 @@ GameObject:
   - component: {fileID: 3653884437023452282}
   - component: {fileID: 7487641775303108262}
   m_Layer: 5
-  m_Name: Healthbar_bg
+  m_Name: Healthbar_bg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,18 +32,17 @@ public class PeachHeart : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Enemy_Stats stats = collision.gameObject.GetComponentInChildren<Enemy_Stats>();
+        Health enemyHealth = collision.transform.GetComponentInParent<Health>();
+        if (enemyHealth == null) return;
+        Enemy_Stats stats = collision.transform.root.GetComponentInChildren<Enemy_Stats>();
         if (stats == null || !stats.isBubbleTarget) {
-            health -= collision.gameObject.GetComponent<Health>().damage;
-            // sr.color = Color.gray;
-            // GetComponent<SoundEffectPlayer>().PlaySoundEffect();
+            health -= enemyHealth.damage;
             StartCoroutine(showCastleDamage());
-
             Anim_Peach anim = GetComponentInChildren<Anim_Peach>();
             if (anim != null) anim.PlayHitAnim();
         } else
         {
-            health += collision.gameObject.GetComponent<Health>().damage;
+            health += enemyHealth.damage;
             ShowVfx();
         }
         

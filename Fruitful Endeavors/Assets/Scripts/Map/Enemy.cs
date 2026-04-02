@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public float anim_speed_standard = 1.8f;
 
     private Transform target;
-    private int waypointIndex = 0;
+    public int waypointIndex = 0;
     private float baseY;
     private Animator animator;
     private bool hasSpeedParam;
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        target = Waypoint.points[0];
+        target = Waypoint.points[waypointIndex];
         Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
         if (stats != null) baseSpeed = stats.speed;
         currSpeed = baseSpeed;
@@ -74,7 +74,9 @@ public class Enemy : MonoBehaviour
             transform.position = pos;
         }
 
-        if (Vector3.Distance(transform.position, target.position) <= .2f)
+        Vector2 flatPos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 flatTarget = new Vector2(target.position.x, target.position.z);
+        if (Vector2.Distance(flatPos, flatTarget) <= .2f)
         {
             GetNextWayPoint();
         }

@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
-        if (stats != null) { health = stats.health; maxHealth = stats.health; }
+        if (stats != null) { health = stats.health; maxHealth = stats.health; damage = stats.damage; }
     }
 
     void Update()
@@ -74,7 +74,7 @@ public class Health : MonoBehaviour
         {
             Enemy enemy = GetComponent<Enemy>();
             Vector3 spawnPos = enemy != null ? enemy.AimPosition : transform.position;
-            Debug.Log($"[KillEnemy] Spawning VFX at {spawnPos}");
+            //Debug.Log($"[KillEnemy] Spawning VFX at {spawnPos}");
             GameObject vfxInstance = Instantiate(deathVfx, spawnPos, Quaternion.identity);
             ParticleSystem ps = vfxInstance.GetComponentInChildren<ParticleSystem>();
             float duration = ps != null ? ps.main.duration + ps.main.startLifetime.constantMax : 2f;
@@ -87,7 +87,9 @@ public class Health : MonoBehaviour
         WaveSpawner.onEnemyDestroy.Invoke();
         LevelManager.main.IncreaseCurrency(currencyWorth);
         isDestroyed = true;
-        Destroy(gameObject);
+        Enemy_SplitGrape split = GetComponentInChildren<Enemy_SplitGrape>();
+        if (split != null) split.Split();
+        else Destroy(gameObject);
     }
 
     public void ChangeSpeed(float tempSpeed)
