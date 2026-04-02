@@ -39,13 +39,13 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(StartWave());
+        StartCoroutine(StartWave());
     }
 
     public void startRound()
     {
-        startButton.SetActive(false);
-        StartCoroutine(StartWave());
+        //startButton.SetActive(false);
+        //StartCoroutine(StartWave());
     }
 
     // Update is called once per frame

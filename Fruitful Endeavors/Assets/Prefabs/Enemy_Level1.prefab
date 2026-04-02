@@ -332,10 +332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
   fruitPrefabs:
-  - {fileID: 4278090518867776169, guid: 6233e61cd45278b419992bb8b4457752, type: 3}
+  - {fileID: 4884356384284367817, guid: 34573e89629b0bf43a428201ec16f7ca, type: 3}
   - {fileID: 7159503177062831574, guid: dc2695d625f99e243b2ab1947a9e4535, type: 3}
   - {fileID: 1710433020049593376, guid: 700df31bcb52bc54a800a7273e0943d9, type: 3}
-  - {fileID: 4884356384284367817, guid: 34573e89629b0bf43a428201ec16f7ca, type: 3}
   yOffset: 0
   chosenPrefab: 0
 --- !u!114 &2994114874623317469

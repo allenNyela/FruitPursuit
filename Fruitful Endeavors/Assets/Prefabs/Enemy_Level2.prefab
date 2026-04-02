@@ -227,6 +227,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -248,9 +250,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &4472379442586197872
 SphereCollider:
@@ -327,9 +331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFruitMesh
   fruitPrefabs:
-  - {fileID: 7159503177062831574, guid: dc2695d625f99e243b2ab1947a9e4535, type: 3}
-  - {fileID: 1710433020049593376, guid: 700df31bcb52bc54a800a7273e0943d9, type: 3}
-  - {fileID: 6072601312269206988, guid: 47b86d2c8ebc32041ad699dccffd3a80, type: 3}
+  - {fileID: 4278090518867776169, guid: 6233e61cd45278b419992bb8b4457752, type: 3}
+  - {fileID: 4278090518867776169, guid: 6233e61cd45278b419992bb8b4457752, type: 3}
   - {fileID: 3415495452731829104, guid: e8ca4c0c76bf7944eb867f4c0688bbab, type: 3}
   - {fileID: 4278090518867776169, guid: 6233e61cd45278b419992bb8b4457752, type: 3}
   yOffset: 0
