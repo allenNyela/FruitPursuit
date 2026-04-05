@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 898650789911796870}
   - component: {fileID: 5328111673368210655}
   - component: {fileID: 1673510057248132042}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Healthbar_fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7178843272941616669}
   - component: {fileID: 8208131155782157027}
   - component: {fileID: 5983063207637406691}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Healthbar_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2734338781334729018}
   - component: {fileID: 1945159739559906072}
   - component: {fileID: 2057066972756084489}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Countdown Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1189488905579852013}
   - component: {fileID: 2658249795899870298}
   - component: {fileID: 7461670370907939887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,8 +313,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -336,11 +334,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &7461670370907939887
 SphereCollider:
@@ -372,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4046744817381137600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Firing Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,6 +478,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7918892301560790633, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481510465377379288, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -1851831543916831415, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000001527369
@@ -525,6 +529,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
       propertyPath: m_Name
       value: Tower_ChatBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539868639035805480, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785305234080040728, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6206054094300401110, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -572,6 +588,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5819474709488721508}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 290933300948719355}
   m_SourcePrefab: {fileID: 100100000, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
 --- !u!1 &6831570425657839189 stripped
 GameObject:
@@ -670,6 +689,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bubble_Countdown
   healthCanvas: {fileID: 1648685780086029281}
   healthbar_fill: {fileID: 898650789911796870}
+--- !u!114 &290933300948719355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359516918488444716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
+  tooltipPres: 0
 --- !u!4 &9171907146146608534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}

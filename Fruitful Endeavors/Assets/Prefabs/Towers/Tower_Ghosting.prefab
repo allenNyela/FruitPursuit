@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4251388147718580582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3590775831624437256}
   - component: {fileID: 5109546663863770168}
   - component: {fileID: 1179902709453401934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: axis.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,8 +93,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -116,11 +114,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &596333002868211743
 GameObject:
@@ -131,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4450922058423932569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +161,7 @@ GameObject:
   - component: {fileID: 1815830909115897590}
   - component: {fileID: 1740124013013752142}
   - component: {fileID: 9005063833813147671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: phone_body.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,8 +212,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -243,11 +237,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5593210285305592713
 GameObject:
@@ -261,7 +253,7 @@ GameObject:
   - component: {fileID: 1420076613031194347}
   - component: {fileID: 8273808243991343506}
   - component: {fileID: 5783678503010306849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,8 +303,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -334,11 +324,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &5783678503010306849
 SphereCollider:
@@ -372,7 +360,7 @@ GameObject:
   - component: {fileID: 435822587299418422}
   - component: {fileID: 7953140964814512155}
   - component: {fileID: 926142492407151228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,8 +410,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -445,11 +431,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7790285313579188008
 GameObject:
@@ -462,7 +446,9 @@ GameObject:
   - component: {fileID: 2774302646065477300}
   - component: {fileID: 5357265800869291521}
   - component: {fileID: 4763116337012654421}
-  m_Layer: 0
+  - component: {fileID: -2904932343580295898}
+  - component: {fileID: -4366751681827841268}
+  m_Layer: 6
   m_Name: Tower_Ghosting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,6 +529,41 @@ MonoBehaviour:
   enemyTag: Enemy
   isPreview: 0
   hoverPixelRadius: 60
+--- !u!65 &-2904932343580295898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790285313579188008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 115
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.25, y: 6.6, z: 3.29}
+  m_Center: {x: 0, y: 3.21, z: -0.06}
+--- !u!114 &-4366751681827841268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790285313579188008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
+  tooltipPres: 0
 --- !u!1001 &1723954620298582150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -602,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fa766d4e5dabaa54ea0b6dd788e4e990, type: 3}
       propertyPath: m_Name
       value: 532_ghosting_screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa766d4e5dabaa54ea0b6dd788e4e990, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa766d4e5dabaa54ea0b6dd788e4e990, type: 3}
       propertyPath: m_IsActive

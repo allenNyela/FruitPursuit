@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1566965517687111515}
   - component: {fileID: 8750092391608192052}
   - component: {fileID: 6144033108398523083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pointer1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +61,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,11 +82,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &929968253554888613
 GameObject:
@@ -101,7 +97,7 @@ GameObject:
   - component: {fileID: 7426645409201326218}
   - component: {fileID: 7546672466157304864}
   - component: {fileID: 2464444216814934686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: vibrate1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,8 +147,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -174,11 +168,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1612157446659292786
 GameObject:
@@ -191,7 +183,8 @@ GameObject:
   - component: {fileID: 2095396532522116296}
   - component: {fileID: 966669617111293504}
   - component: {fileID: 1033643741509102338}
-  m_Layer: 0
+  - component: {fileID: -8265817541542279847}
+  m_Layer: 6
   m_Name: Tower_AnotherTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,6 +263,20 @@ MonoBehaviour:
   enemyTag: Enemy
   isPreview: 0
   hoverPixelRadius: 60
+--- !u!114 &-8265817541542279847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612157446659292786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
+  tooltipPres: 0
 --- !u!1 &1690528409748715243
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2088808898330819252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +319,7 @@ GameObject:
   - component: {fileID: 8935602004283863738}
   - component: {fileID: 1749477010640441603}
   - component: {fileID: 8370169960582964919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pointer2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,8 +369,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -385,11 +390,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3553003564451083524
 GameObject:
@@ -402,7 +405,7 @@ GameObject:
   - component: {fileID: 3529250974573163366}
   - component: {fileID: 2660633609705785412}
   - component: {fileID: 6027169264133298301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,8 +455,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -475,11 +476,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3606646673396077812
 GameObject:
@@ -492,7 +491,7 @@ GameObject:
   - component: {fileID: 1677773177729019205}
   - component: {fileID: 6190528477909217440}
   - component: {fileID: 7610317794679516239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pointer1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,8 +541,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -565,11 +562,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3969746169707398482
 GameObject:
@@ -582,7 +577,7 @@ GameObject:
   - component: {fileID: 7203726125441741774}
   - component: {fileID: 2060447495676960934}
   - component: {fileID: 6926412552249789317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pointer2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,8 +627,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -655,11 +648,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4774517200751710148
 GameObject:
@@ -673,7 +664,7 @@ GameObject:
   - component: {fileID: 4815388465489209274}
   - component: {fileID: 5074227645779640202}
   - component: {fileID: 1132600528947296981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,8 +714,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -746,11 +735,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &1132600528947296981
 SphereCollider:
@@ -784,7 +771,7 @@ GameObject:
   - component: {fileID: 7654466674706325361}
   - component: {fileID: 2532905821094582385}
   - component: {fileID: 3337117054425685752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,8 +821,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -858,11 +843,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5769238780361346279
 GameObject:
@@ -875,7 +858,7 @@ GameObject:
   - component: {fileID: 3461685461383003850}
   - component: {fileID: 2966765871413540022}
   - component: {fileID: 6765737139582832513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: clockbody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,8 +914,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -958,11 +939,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7754980407727032437
 GameObject:
@@ -975,7 +954,7 @@ GameObject:
   - component: {fileID: 4246861307184953295}
   - component: {fileID: 2413371024428504429}
   - component: {fileID: 2223308048958599426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: viberate2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,8 +1004,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1048,11 +1025,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8760880146253540213
 GameObject:
@@ -1065,7 +1040,7 @@ GameObject:
   - component: {fileID: 5977022962768094256}
   - component: {fileID: 5009248064328278408}
   - component: {fileID: 2291188006873024312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: time_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,8 +1092,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1140,9 +1113,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
