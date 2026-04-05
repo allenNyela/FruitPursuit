@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy_SplitGrape : MonoBehaviour
 {
     public GameObject grape2Prefab;
+    public WaveSpawner waveSpawner;
     public int spawnCount = 4;
 
     public void Split()
@@ -20,6 +21,7 @@ public class Enemy_SplitGrape : MonoBehaviour
             Enemy e = g.GetComponent<Enemy>();
             if (e != null) e.waypointIndex = currentWaypoint;
             spawned++;
+            WaveSpawner.onEnemyAdded.Invoke();
         }
         Debug.Log($"[Split] spawned {spawned} grape2s");
 

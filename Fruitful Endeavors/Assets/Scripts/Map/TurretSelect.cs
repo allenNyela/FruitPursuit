@@ -14,10 +14,10 @@ public class TurretSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tooltipPres)
-        {
-            Tooltip.transform.position = Input.mousePosition;
-        }
+        //if (tooltipPres)
+        //{
+        //    Tooltip.transform.position = Input.mousePosition;
+        //}
         
     }
 

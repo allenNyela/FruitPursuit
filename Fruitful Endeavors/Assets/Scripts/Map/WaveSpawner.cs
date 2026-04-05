@@ -23,7 +23,7 @@ public class WaveSpawner : MonoBehaviour
 
     private float timeSinceLastSpawn;
     private int enemiesAlive;
-    private int enemiesLeftToSpawn;
+    public int enemiesLeftToSpawn;
     private bool isSpawning = false;
     private bool startCountdown = false;
     public TMP_Text countdownText;
@@ -31,21 +31,23 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
+    public static UnityEvent onEnemyAdded = new UnityEvent();
 
     private void Awake()
     {
         onEnemyDestroy.AddListener(EnemyDestroyed);
+        onEnemyAdded.AddListener(EnemyAdded);
     }
 
     private void Start()
     {
-        StartCoroutine(StartWave());
+        //StartCoroutine(StartWave());
     }
 
     public void startRound()
     {
-        //startButton.SetActive(false);
-        //StartCoroutine(StartWave());
+        startButton.SetActive(false);
+        StartCoroutine(StartWave());
     }
 
     // Update is called once per frame
@@ -109,6 +111,11 @@ public class WaveSpawner : MonoBehaviour
     private int EnemyPerWave()
     {
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(waveNumber, difficultyScalingFactor));
+    }
+
+    private void EnemyAdded()
+    {
+        enemiesAlive++;
     }
 
     private void EnemyDestroyed()
