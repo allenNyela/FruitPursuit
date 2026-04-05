@@ -24016,6 +24016,7 @@ GameObject:
   - component: {fileID: 1767124856}
   - component: {fileID: 1767124855}
   - component: {fileID: 1767124854}
+  - component: {fileID: 1767124858}
   m_Layer: 0
   m_Name: SpawnArea
   m_TagString: Untagged
@@ -24116,6 +24117,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767124858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767124853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69d23f451e6d00458e936406a383d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPathing
+  selectedLevel: 1
+  pathingPrefab: {fileID: 295908625707651678, guid: 6b15ec3be7e957b408f3093fd141f439, type: 3}
+  speed: 50
+  spawnPoint1: {fileID: 0}
+  waypointParent1: {fileID: 0}
+  spawnPoint2: {fileID: 1767124857}
+  waypointParent2A: {fileID: 1144369149}
 --- !u!1001 &1768965681
 PrefabInstance:
   m_ObjectHideFlags: 0
