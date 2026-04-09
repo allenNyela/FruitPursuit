@@ -1,0 +1,14 @@
+﻿title: Tutorial_Dialogue
+color: green
+position: -272,-161
+---
+Olivia Orange: Hey Peachy! Now that the Spring Fling is coming up. 
+Olivia Orange: You'll have lots of suitors lining up to ask you out.
+<<jump Node_1775713450174>>
+===
+
+title: Node_1775713450174
+position: -272,-6
+---
+Olivia Orange: I'll help you learn how to reject the ones you're not interested and protect your heart. Let's get started.
+===

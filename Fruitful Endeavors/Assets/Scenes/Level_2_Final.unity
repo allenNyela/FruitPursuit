@@ -692,7 +692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b754516d8754ee47a898122430c885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e79bd6abf7ed634393663e397bf4202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8136,7 +8136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b754516d8754ee47a898122430c885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e79bd6abf7ed634393663e397bf4202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8948,7 +8948,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 68, y: 77}
-  m_Spacing: {x: -26.9, y: 16.52}
+  m_Spacing: {x: -26.9, y: 7.68}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1001 &644332917
@@ -16190,6 +16190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ab2e8923a7dc944967f5203a91401e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path2: []
 --- !u!1 &1152118847
 GameObject:
   m_ObjectHideFlags: 0
@@ -18117,7 +18118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b754516d8754ee47a898122430c885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e79bd6abf7ed634393663e397bf4202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21923,7 +21924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2e20320f68cb4ea01a27c942bd4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6824475166323978051, guid: bb29720d106fd23489cdee25c0506417, type: 3}
+  enemyPrefab:
+  - {fileID: 6824475166323978051, guid: bb29720d106fd23489cdee25c0506417, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnPoint: {fileID: 1767124857}
   baseEnemies: 2
   enemiesPerSecond: 0.5
@@ -24389,7 +24393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b754516d8754ee47a898122430c885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e79bd6abf7ed634393663e397bf4202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26071,7 +26075,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b754516d8754ee47a898122430c885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e79bd6abf7ed634393663e397bf4202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

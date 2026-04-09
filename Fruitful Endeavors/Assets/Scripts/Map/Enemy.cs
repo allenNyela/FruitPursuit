@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     private float baseY;
     private Animator animator;
     private bool hasSpeedParam;
+    private int path = 0;
+    //public Waypoint waypoint;
 
     [SerializeField] public EnemyType type;
 
@@ -34,7 +36,15 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        target = Waypoint.points[waypointIndex];
+       // path = Random.Range(0, 1);
+        if (path == 0 )
+        {
+            target = Waypoint.path1[waypointIndex];
+        } //else
+        //{
+        //    target = waypoint.path2[waypointIndex];
+        //}
+        
         Enemy_Stats stats = GetComponentInChildren<Enemy_Stats>();
         if (stats != null) baseSpeed = stats.speed;
         currSpeed = baseSpeed;
@@ -84,19 +94,43 @@ public class Enemy : MonoBehaviour
 
     void GetNextWayPoint()
     {
-        if (waypointIndex >= Waypoint.points.Length - 1) 
+        if (path == 0)
         {
-            WaveSpawner.onEnemyDestroy.Invoke();
-            Destroy(gameObject);
-            return;
-        }
-        waypointIndex++;
-        target = Waypoint.points[waypointIndex];
+            if (waypointIndex >= Waypoint.path1.Length - 1)
+            {
+                WaveSpawner.onEnemyDestroy.Invoke();
+                Destroy(gameObject);
+                return;
+            }
+            waypointIndex++;
+            target = Waypoint.path1[waypointIndex];
+        } //else
+       // {
+        //    if (waypointIndex >= waypoint.path2.Length - 1)
+         //   {
+         //       WaveSpawner.onEnemyDestroy.Invoke();
+         //       Destroy(gameObject);
+           //     return;
+          //  }
+         //   waypointIndex++;
+         //   target = waypoint.path2[waypointIndex];
+        //}
+        
     }
 
     public enum EnemyType
     {
         Unwanted,
         Wanted
+    }
+
+    public void pauseSpeed()
+    {
+        currSpeed = 0f;
+    }
+
+    public void resumeSpeed()
+    {
+        currSpeed = baseSpeed;
     }
 }

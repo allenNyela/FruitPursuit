@@ -5,7 +5,7 @@ using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public Transform[] enemyPrefab;
 
     public Transform spawnPoint;
 
@@ -105,7 +105,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation);
     }
 
     private int EnemyPerWave()
@@ -121,5 +121,15 @@ public class WaveSpawner : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
+    }
+
+    public void SpawnEnemy1()
+    {
+        Instantiate(enemyPrefab[1], spawnPoint.position, spawnPoint.rotation);
+    }
+
+    public void SpawnBananaSuitor()
+    {
+        Instantiate(enemyPrefab[2], spawnPoint.position, spawnPoint.rotation);
     }
 }
