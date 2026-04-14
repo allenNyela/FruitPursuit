@@ -930,7 +930,7 @@ MonoBehaviour:
   rangeSphere: {fileID: 7041695404203701113}
   enemyTag: Enemy
   isPreview: 0
-  hoverPixelRadius: 60
+  hoverPixelRadius: 100
 --- !u!1 &8255936949283620267
 GameObject:
   m_ObjectHideFlags: 0
