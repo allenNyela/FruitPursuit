@@ -12,6 +12,8 @@ public class PeachHeart : MonoBehaviour
     [SerializeField] GameObject gameOverscreen;
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject UI;
+    [SerializeField] GameObject[] hearts;
+    public int idx = 0;
     public GameObject vfx;
 
     private Color startColor;
@@ -43,6 +45,8 @@ public class PeachHeart : MonoBehaviour
         } else
         {
             health += enemyHealth.damage;
+            hearts[idx].SetActive(true);
+            idx++;
             ShowVfx();
         }
         
@@ -84,7 +88,7 @@ public class PeachHeart : MonoBehaviour
         {
             gameOverscreen.SetActive(true);
             UI.SetActive(false);
-        } else if (health >= winHealth)
+        } else if (idx >= 5)
         {
             winScreen.SetActive(true);
             UI.SetActive(false);

@@ -109,7 +109,7 @@ public class WaveSpawner : MonoBehaviour
     public void SpawnEnemy()
     {
         int randomInt = Random.Range(0, enemyPrefab.Length);
-        enemyPause.enemies.Add(Instantiate(enemyPrefab[randomInt], spawnPoint.position, spawnPoint.rotation));
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation));
         //Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation);
     }
 
