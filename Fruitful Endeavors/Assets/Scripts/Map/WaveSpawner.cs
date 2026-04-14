@@ -14,6 +14,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = .5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = .75f;
+    [SerializeField] public EnemyPause enemyPause;
 
     //public float timeBetweenWaves = 5f;
     private float countdown = 2f;
@@ -105,7 +106,8 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation);
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation));
+        //Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation);
     }
 
     private int EnemyPerWave()
@@ -125,11 +127,11 @@ public class WaveSpawner : MonoBehaviour
 
     public void SpawnEnemy1()
     {
-        Instantiate(enemyPrefab[1], spawnPoint.position, spawnPoint.rotation);
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[1], spawnPoint.position, spawnPoint.rotation));
     }
 
     public void SpawnBananaSuitor()
     {
-        Instantiate(enemyPrefab[2], spawnPoint.position, spawnPoint.rotation);
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[2], spawnPoint.position, spawnPoint.rotation));
     }
 }

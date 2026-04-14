@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using Yarn.Unity;
 
 public class Plot : MonoBehaviour
 {
@@ -6,14 +8,19 @@ public class Plot : MonoBehaviour
     //[SerializeField] private SpriteRenderer sr;
     //[SerializeField] private Color hoverColor;
 
+    [Header("Events")]
+    public static UnityEvent onPlotFilled = new UnityEvent();
+
     private GameObject tower;
     private Color startColor;
     public bool turretFilled;
+    public DialogueFunctions DialogueFunct;
+    public string nodeName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // startColor = sr.color;
+        onPlotFilled.AddListener(PlotFilled);
     }
 
     // Update is called once per frame
@@ -54,5 +61,15 @@ public class Plot : MonoBehaviour
 
         tower = Instantiate(tempTower.prefab, spawnLocation, Quaternion.Euler(new Vector3(0, LevelManager.main.rotation, 0)));
         turretFilled = true;
+        onPlotFilled.Invoke();
+    }
+
+
+    public void PlotFilled()
+    {
+        if (DialogueFunct != null)
+        {
+            DialogueFunct.StartNode(nodeName);
+        }    
     }
 }
