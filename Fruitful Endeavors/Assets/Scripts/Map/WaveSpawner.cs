@@ -9,6 +9,8 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
+    [SerializeField] public DialogueFunctions dialogueFunc;
+
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = .5f;
@@ -104,9 +106,10 @@ public class WaveSpawner : MonoBehaviour
     //    waveNumber++;
     //}
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
-        enemyPause.enemies.Add(Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation));
+        int randomInt = Random.Range(0, enemyPrefab.Length);
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[randomInt], spawnPoint.position, spawnPoint.rotation));
         //Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation);
     }
 
@@ -123,11 +126,20 @@ public class WaveSpawner : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
+        if (dialogueFunc != null)
+        {
+            dialogueFunc.TutorialTimeline.Resume();
+        }
     }
 
     public void SpawnEnemy1()
     {
         enemyPause.enemies.Add(Instantiate(enemyPrefab[1], spawnPoint.position, spawnPoint.rotation));
+    }
+
+    public void SpawnEnemy2()
+    {
+        enemyPause.enemies.Add(Instantiate(enemyPrefab[0], spawnPoint.position, spawnPoint.rotation));
     }
 
     public void SpawnBananaSuitor()

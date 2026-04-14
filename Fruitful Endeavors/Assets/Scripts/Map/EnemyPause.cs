@@ -22,7 +22,10 @@ public class EnemyPause : MonoBehaviour
     {
         for(int i = 0; i < enemies.Count; i++)
         {
-            enemies[i].GetComponent<Enemy>().pauseSpeed();
+            if (enemies[i] != null)
+            {
+                enemies[i].GetComponent<Enemy>().pauseSpeed();
+            }            
         }
     }
 
@@ -30,7 +33,10 @@ public class EnemyPause : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            enemies[i].GetComponent<Enemy>().resumeSpeed();
+            if (enemies[i] != null)
+            {
+                enemies[i].GetComponent<Enemy>().resumeSpeed();
+            }
         }
     }
 }

@@ -60,14 +60,15 @@ public class Plot : MonoBehaviour
         Vector3 spawnLocation = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
 
         tower = Instantiate(tempTower.prefab, spawnLocation, Quaternion.Euler(new Vector3(0, LevelManager.main.rotation, 0)));
-        turretFilled = true;
         onPlotFilled.Invoke();
+        turretFilled = true;
+        
     }
 
 
     public void PlotFilled()
     {
-        if (DialogueFunct != null)
+        if (DialogueFunct != null && !turretFilled)
         {
             DialogueFunct.StartNode(nodeName);
         }    

@@ -85,7 +85,10 @@ public class Health : MonoBehaviour
             Debug.LogWarning("[KillEnemy] deathVfx is null — assign it in the Inspector on the enemy prefab");
         }
         WaveSpawner.onEnemyDestroy.Invoke();
-        LevelManager.main.IncreaseCurrency(currencyWorth);
+        if (this.gameObject.GetComponent<Enemy>().type == Enemy.EnemyType.Unwanted)
+        {
+            LevelManager.main.IncreaseCurrency(currencyWorth);
+        }      
         isDestroyed = true;
         Enemy_SplitGrape split = GetComponentInChildren<Enemy_SplitGrape>();
         if (split != null) split.Split();

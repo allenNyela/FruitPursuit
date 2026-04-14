@@ -7,6 +7,9 @@ public class DialogueFunctions : MonoBehaviour
     public DialogueRunner DialogueRunner;
     public PlayableDirector TutorialTimeline;
     public SwitchMat Switchmat;
+    public SwitchMat Switchmat2;
+    public SwitchMat Switchmat3;
+    public SwitchMat Switchmat4;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +50,31 @@ public class DialogueFunctions : MonoBehaviour
             Switchmat.switchToDefaultMat();
             TutorialTimeline.Resume();        
         }
+
+        if (nodeName == "Node_1776157661033")
+        {
+            Switchmat2.switchToDefaultMat();
+            TutorialTimeline.Resume();
+        }
+
+        if (nodeName == "Node_1776157986163")
+        {
+            Switchmat3.switchToDefaultMat();
+            Switchmat4.switchToDefaultMat();
+            TutorialTimeline.Resume();
+        }
+
+        if (nodeName == "Node_1776158510833")
+        {
+            //Switchmat.switchToDefaultMat();
+            TutorialTimeline.Resume();
+        }
+
+        if (nodeName == "Node_1776158694780")
+        {
+            //Switchmat.switchToDefaultMat();
+            TutorialTimeline.Resume();
+        }
     }
 
     void OnNodeStarted(string nodeName)
@@ -54,6 +82,17 @@ public class DialogueFunctions : MonoBehaviour
         if (nodeName == "Node_1776157009657")
         {
             Switchmat.switchToNewMat();
+        }
+
+        if (nodeName == "Node_1776157442870")
+        {
+            Switchmat2.switchToNewMat();
+        }
+
+        if (nodeName == "Node_1776157809963")
+        {
+            Switchmat3.switchToNewMat();
+            Switchmat4.switchToNewMat();
         }
     }
 
