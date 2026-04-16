@@ -89,7 +89,7 @@ public class Turret : MonoBehaviour
             {
                 return;
             }
-            if ((!(target.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 2)) && (bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield || bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Healing))
+            if ((!(target.gameObject.GetComponent<EnemyFruitMesh>().chosenPrefab == 2)) && (bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Shield || bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Healing || bulletPrefab.GetComponent<Bullet>().type == Bullet.BulletType.Speedup))
             {
                 return;
             } else

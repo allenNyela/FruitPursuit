@@ -216,9 +216,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 819293295549264741}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4631412136682727866}
     - targetCorrespondingSourceObject: {fileID: -5074854753711815471, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 659960152767039520}
@@ -335,20 +332,6 @@ MonoBehaviour:
   fistSpeed: 10
   fistTravelDistance: 8
   fistSpawnAnimDur: 0.2
---- !u!114 &4631412136682727866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3993126904187544875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
-  tooltipPres: 0
 --- !u!4 &4332954803485753233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a85f6bbb27abddc4d9eea3f21372a3ad, type: 3}
@@ -366,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1834409219973411734, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -412,19 +399,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.84106433
+      value: 0.8950689
       objectReference: {fileID: 0}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.118462995
+      value: 0.20424314
       objectReference: {fileID: 0}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5226455
+      value: 0.3864704
       objectReference: {fileID: 0}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.073614046
+      value: -0.08818753
       objectReference: {fileID: 0}
     - target: {fileID: 3946675236172804617, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -446,6 +433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13.443
       objectReference: {fileID: 0}
+    - target: {fileID: 6932540088635467806, guid: 788b9da7a6bd16347bd610dc4b2215c9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

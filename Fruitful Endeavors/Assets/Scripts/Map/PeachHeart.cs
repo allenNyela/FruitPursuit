@@ -46,7 +46,7 @@ public class PeachHeart : MonoBehaviour
         {
             health += enemyHealth.damage;
             hearts[idx].SetActive(true);
-            idx++;
+            ++idx;
             ShowVfx();
         }
         

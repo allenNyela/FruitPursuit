@@ -1204,9 +1204,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5819474709488721508}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 290933300948719355}
   m_SourcePrefab: {fileID: 100100000, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}
 --- !u!1 &6831570425657839189 stripped
 GameObject:
@@ -1306,20 +1303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bubble_Countdown
   healthCanvas: {fileID: 1648685780086029281}
   healthbar_fill: {fileID: 898650789911796870}
---- !u!114 &290933300948719355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8359516918488444716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
-  tooltipPres: 0
 --- !u!4 &9171907146146608534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de67f9479fa6f4947a42be5c25878d7c, type: 3}

@@ -183,7 +183,6 @@ GameObject:
   - component: {fileID: 2095396532522116296}
   - component: {fileID: 966669617111293504}
   - component: {fileID: 1033643741509102338}
-  - component: {fileID: -8265817541542279847}
   m_Layer: 6
   m_Name: Tower_AnotherTime
   m_TagString: Untagged
@@ -264,20 +263,6 @@ MonoBehaviour:
   enemyTag: Enemy
   isPreview: 0
   hoverPixelRadius: 100
---- !u!114 &-8265817541542279847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612157446659292786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
-  tooltipPres: 0
 --- !u!1 &1690528409748715243
 GameObject:
   m_ObjectHideFlags: 0

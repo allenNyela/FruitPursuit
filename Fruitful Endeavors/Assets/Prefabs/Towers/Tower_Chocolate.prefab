@@ -910,7 +910,6 @@ GameObject:
   - component: {fileID: 6183618076281382804}
   - component: {fileID: 2890779422149620023}
   - component: {fileID: 180026585996534397}
-  - component: {fileID: -8093273514304658152}
   m_Layer: 6
   m_Name: Tower_Chocolate
   m_TagString: Untagged
@@ -997,20 +996,6 @@ MonoBehaviour:
   enemyTag: Enemy
   isPreview: 0
   hoverPixelRadius: 100
---- !u!114 &-8093273514304658152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7003331462794786690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26a7653b1c1d0942a2b0fcd8164e473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tooltip: {fileID: 2289968842077131287, guid: 3eeca9348cce31a489a4cf2875b21e17, type: 3}
-  tooltipPres: 0
 --- !u!1 &9134285390503249812
 GameObject:
   m_ObjectHideFlags: 0

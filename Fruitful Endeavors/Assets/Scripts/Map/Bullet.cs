@@ -8,8 +8,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int bulletDamage = 10;
     [SerializeField] public BulletType type;
     [SerializeField] public float shieldTimer = 5f;
-    [SerializeField] public float speedReducTimer = 5f;
+    [SerializeField] public float speedTimer = 5f;
     public float slowdownFactor = 0.333f;
+    public float speedupFactor = 1.333f;
 
     public bool  followOnHit    = false;
     public float followDuration = 3f;
@@ -82,10 +83,15 @@ public class Bullet : MonoBehaviour
         {
             target.gameObject.GetComponent<Health>().ChangeSpeed(target.GetComponent<Enemy>().baseSpeed * slowdownFactor);
             target.gameObject.GetComponent<Health>().speedChanged = true;
-            target.gameObject.GetComponent<Health>().speedCountdown = speedReducTimer;
+            target.gameObject.GetComponent<Health>().speedCountdown = speedTimer;
         } else if (type == BulletType.Punch)
         {
             return;
+        } else if (type == BulletType.Speedup)
+        {
+            target.gameObject.GetComponent<Health>().ChangeSpeed(target.GetComponent<Enemy>().baseSpeed * speedupFactor);
+            target.gameObject.GetComponent<Health>().speedChanged = true;
+            target.gameObject.GetComponent<Health>().speedCountdown = speedTimer;
         }
         if (followOnHit)
         {
@@ -122,6 +128,7 @@ public class Bullet : MonoBehaviour
         Attack,
         Healing,
         Slowdown,
+        Speedup,
         Punch
     }
 }
