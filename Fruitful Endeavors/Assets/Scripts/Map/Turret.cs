@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public GameObject rangeSphere;
+    public Plot plot;
 
     public string enemyTag = "Enemy";  
     

@@ -31,6 +31,7 @@ public class WaveSpawner : MonoBehaviour
     private bool startCountdown = false;
     public TMP_Text countdownText;
     public GameObject startButton;
+    public GameObject CountDown;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -50,7 +51,9 @@ public class WaveSpawner : MonoBehaviour
     public void startRound()
     {
         startButton.SetActive(false);
-        StartCoroutine(StartWave());
+        CountDown.SetActive(true);
+        //StartCoroutine(StartWave());
+
     }
 
     // Update is called once per frame
@@ -80,9 +83,16 @@ public class WaveSpawner : MonoBehaviour
         //}
     }
 
-    private IEnumerator StartWave()
+    //private IEnumerator StartWave()
+    //{
+    //   yield return new WaitForSeconds(timeBetweenWaves);
+    //    isSpawning = true;
+    //  enemiesLeftToSpawn = EnemyPerWave();
+    //}
+
+    public void StartWave()
     {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        CountDown.SetActive(false);
         isSpawning = true;
         enemiesLeftToSpawn = EnemyPerWave();
     }
@@ -92,7 +102,10 @@ public class WaveSpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         waveNumber++;
-        StartCoroutine(StartWave());
+        //StartCoroutine(StartWave());
+        
+        CountDown.SetActive(true);
+        //CountDown.GetComponent<CountDown>().ResetTimer();
     }
 
     //IEnumerator SpawnWave()
