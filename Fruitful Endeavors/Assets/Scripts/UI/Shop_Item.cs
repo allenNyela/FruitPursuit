@@ -1,13 +1,14 @@
-using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine;
 
-public class Shop_Item : MonoBehaviour
+public class Shop_Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-
     public int cost;
     public Button button;
     public Image display;
+    public GameObject tooltip;
 
     [Header("Events")]
     public static UnityEvent onCurrencyChange = new UnityEvent();
@@ -15,35 +16,25 @@ public class Shop_Item : MonoBehaviour
     private void Awake()
     {
         onCurrencyChange.AddListener(CurrencyChanged);
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //display = GetComponent<Image>();
-
+        if (tooltip) tooltip.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        if (tooltip) tooltip.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (tooltip) tooltip.SetActive(false);
     }
 
     void CurrencyChanged()
     {
-        if (LevelManager.main.currency < cost)
-        {
-            button.interactable = false;
-            Color tempColor = display.color;
-            tempColor.a = .5f;
-            display.color = tempColor;
-        }
-        else
-        {
-            button.interactable = true;
-            Color tempColor = display.color;
-            tempColor.a = 1f;
-            display.color = tempColor;
-        }
+        bool canAfford = LevelManager.main.currency >= cost;
+        button.interactable = canAfford;
+        Color c = display.color;
+        c.a = canAfford ? 1f : .5f;
+        display.color = c;
     }
 }
