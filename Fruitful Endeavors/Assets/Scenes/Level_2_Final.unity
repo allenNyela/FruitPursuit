@@ -20806,7 +20806,7 @@ MonoBehaviour:
   dialogueFunc: {fileID: 0}
   baseEnemies: 2
   enemiesPerSecond: 0.5
-  timeBetweenWaves: 5
+  timeBetweenWaves: 3
   difficultyScalingFactor: 0.5
   enemyPause: {fileID: 1509817171}
   enemiesLeftToSpawn: 0
@@ -27986,7 +27986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 2111740183}
   slider: {fileID: 2111740184}
-  timeStart: 5
+  timeStart: 3
   OnComplete:
     m_PersistentCalls:
       m_Calls:
