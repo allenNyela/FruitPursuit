@@ -311,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 12
   maxHealth: 0
-  currencyWorth: 6
+  currencyWorth: 1
   shielded: 0
   speedChanged: 0
   shieldCountdown: 2
